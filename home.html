@@ -3,44 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 1. Content Security Policy -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://images.unsplash.com https://wa.me;">
+    <title>Home | AS Web Solutions - Premium Web Agency</title>
     
-    <title>AS Web Solutions | We Build Brands, Websites & Futures</title>
-    
-    <!-- Fonts & Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts & Font Awesome -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            /* Theme: Dark (Default) */
-            --bg-color: #030712;
-            --surface-color: rgba(17, 24, 39, 0.7);
-            --text-main: #f9fafb;
-            --text-dim: #9ca3af;
-            --primary: #3b82f6;
-            --accent: #8b5cf6;
-            --glow: rgba(59, 130, 246, 0.5);
+            /* Dark Theme (Default) */
+            --bg: #050505;
+            --surface: rgba(20, 20, 25, 0.7);
             --border: rgba(255, 255, 255, 0.1);
+            --text-main: #ffffff;
+            --text-dim: #a1a1aa;
+            --primary: #00f2ff;
+            --accent: #8b5cf6;
             --glass: blur(12px);
-            --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
-            --nav-bg: rgba(3, 7, 18, 0.8);
-            --grad-linear: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            --glow: rgba(0, 242, 255, 0.3);
+            --card-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
 
         [data-theme="light"] {
-            --bg-color: #f8fafc;
-            --surface-color: rgba(255, 255, 255, 0.7);
+            --bg: #f8fafc;
+            --surface: rgba(255, 255, 255, 0.7);
+            --border: rgba(0, 0, 0, 0.05);
             --text-main: #0f172a;
-            --text-dim: #475569;
+            --text-dim: #64748b;
             --primary: #2563eb;
             --accent: #7c3aed;
-            --glow: rgba(37, 99, 235, 0.2);
-            --border: rgba(0, 0, 0, 0.05);
-            --card-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
-            --nav-bg: rgba(248, 250, 252, 0.8);
-            --grad-linear: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            --glow: rgba(37, 99, 235, 0.1);
+            --card-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
         }
 
         * {
@@ -52,759 +45,562 @@
         }
 
         body {
-            background-color: var(--bg-color);
+            background-color: var(--bg);
             color: var(--text-main);
             overflow-x: hidden;
-            transition: background 0.4s ease, color 0.4s ease;
+            transition: background 0.3s ease;
         }
 
         /* --- UTILITIES --- */
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .section-padding { padding: 100px 0; }
-        .btn {
-            padding: 12px 28px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            cursor: pointer;
-            border: none;
-        }
-        .btn-primary { background: var(--grad-linear); color: white; box-shadow: 0 10px 20px -5px var(--glow); }
-        .btn-primary:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 15px 30px -5px var(--glow); }
-        
-        .btn-outline { border: 1px solid var(--border); background: var(--surface-color); color: var(--text-main); backdrop-filter: var(--glass); }
+        .glass { background: var(--surface); backdrop-filter: var(--glass); border: 1px solid var(--border); border-radius: 20px; }
+        .btn { padding: 12px 28px; border-radius: 50px; font-weight: 600; cursor: pointer; transition: 0.3s; border: none; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-primary { background: linear-gradient(135deg, var(--primary), var(--accent)); color: white; box-shadow: 0 10px 20px var(--glow); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 30px var(--glow); }
+        .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text-main); }
         .btn-outline:hover { background: var(--border); }
-
-        .glass-card {
-            background: var(--surface-color);
-            backdrop-filter: var(--glass);
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 30px;
-            box-shadow: var(--card-shadow);
-        }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 15px; background: linear-gradient(to right, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
         /* --- LOADER --- */
         #loader {
-            position: fixed;
-            inset: 0;
-            z-index: 10000;
-            background: #030712;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            transition: opacity 0.8s ease, visibility 0.8s ease;
+            position: fixed; inset: 0; z-index: 9999; background: var(--bg); display: flex; flex-direction: column; align-items: center; justify-content: center;
         }
-        .loader-logo { font-size: 2rem; font-weight: 800; background: var(--grad-linear); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px; letter-spacing: -1px; }
-        .loader-bar { width: 200px; height: 3px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
-        .loader-progress { width: 0%; height: 100%; background: var(--primary); animation: load 2s ease-in-out forwards; }
-        @keyframes load { to { width: 100%; } }
+        .loader-logo { font-size: 2rem; font-weight: 800; margin-bottom: 20px; opacity: 0; animation: fadeInUp 0.8s forwards; }
+        .progress-container { width: 200px; height: 4px; background: var(--border); border-radius: 10px; overflow: hidden; }
+        .progress-bar { width: 0%; height: 100%; background: var(--primary); animation: progress 1.5s forwards; }
+        @keyframes progress { to { width: 100%; } }
 
-        /* --- BACKGROUND EFFECTS --- */
-        #bg-canvas { position: fixed; top: 0; left: 0; z-index: -1; pointer-events: none; }
-        .blob {
-            position: absolute;
-            width: 500px; height: 500px;
-            background: radial-gradient(circle, var(--glow) 0%, transparent 70%);
-            z-index: -1;
-            filter: blur(80px);
-            opacity: 0.4;
-            animation: move 20s infinite alternate;
+        /* --- HEADER --- */
+        header {
+            position: fixed; top: 0; width: 100%; z-index: 1000; transition: 0.3s; padding: 20px 0;
         }
-        @keyframes move { from { transform: translate(-10%, -10%); } to { transform: translate(20%, 20%); } }
-
-        #cursor-glow {
-            width: 400px; height: 400px;
-            background: radial-gradient(circle, var(--glow) 0%, transparent 70%);
-            position: fixed;
-            pointer-events: none;
-            z-index: -1;
-            transform: translate(-50%, -50%);
-            opacity: 0.3;
-        }
-
-        /* --- NAVBAR --- */
-        nav {
-            position: fixed;
-            top: 0; width: 100%;
-            z-index: 1000;
-            background: var(--nav-bg);
-            backdrop-filter: var(--glass);
-            border-bottom: 1px solid var(--border);
-            padding: 20px 0;
-            transition: 0.3s;
-        }
-        nav.scrolled { padding: 12px 0; }
-        .nav-content { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.5rem; font-weight: 800; color: var(--text-main); text-decoration: none; display: flex; align-items: center; gap: 8px; }
-        .logo i { color: var(--primary); }
+        header.scrolled { padding: 12px 0; background: var(--surface); backdrop-filter: var(--glass); border-bottom: 1px solid var(--border); }
+        .nav-flex { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.4rem; font-weight: 800; color: var(--text-main); text-decoration: none; }
+        .logo span { color: var(--primary); }
+        .nav-menu { display: flex; gap: 30px; list-style: none; }
+        .nav-menu a { text-decoration: none; color: var(--text-dim); font-weight: 500; transition: 0.3s; position: relative; }
+        .nav-menu a:hover { color: var(--primary); }
+        .nav-menu a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: var(--primary); transition: 0.3s; }
+        .nav-menu a:hover::after { width: 100%; }
         
-        .nav-links { display: flex; gap: 30px; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--text-dim); font-weight: 500; font-size: 0.95rem; transition: 0.3s; position: relative; }
-        .nav-links a:hover { color: var(--text-main); }
-        .nav-links a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0%; height: 2px; background: var(--grad-linear); transition: 0.3s; }
-        .nav-links a:hover::after { width: 100%; }
-
-        .nav-right { display: flex; align-items: center; gap: 15px; }
-        .theme-toggle { cursor: pointer; font-size: 1.2rem; color: var(--text-dim); transition: 0.3s; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; border: 1px solid var(--border); }
-        .theme-toggle:hover { color: var(--primary); background: var(--border); }
-
-        .hamburger { display: none; cursor: pointer; font-size: 1.5rem; }
+        .profile-trigger { display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 5px 15px; border-radius: 50px; background: var(--border); }
+        #nav-user-img { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary); }
+        
+        /* --- PROFILE PANEL --- */
+        #profile-panel {
+            position: fixed; top: 80px; right: 20px; width: 350px; padding: 30px; z-index: 1001;
+            display: none; transform: translateY(-20px); transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        #profile-panel.active { display: block; transform: translateY(0); }
+        .panel-header { text-align: center; margin-bottom: 25px; }
+        #panel-img { width: 80px; height: 80px; border-radius: 50%; margin-bottom: 10px; border: 3px solid var(--primary); }
+        .input-group { margin-bottom: 15px; }
+        .input-group label { display: block; font-size: 0.8rem; color: var(--text-dim); margin-bottom: 5px; }
+        .input-group input { width: 100%; padding: 10px; border-radius: 10px; background: var(--bg); border: 1px solid var(--border); color: var(--text-main); }
+        .settings-row { display: flex; justify-content: space-between; align-items: center; margin: 15px 0; padding-top: 15px; border-top: 1px solid var(--border); }
+        #brightness-slider { width: 100px; }
 
         /* --- HERO --- */
-        .hero { position: relative; padding: 180px 0 100px; display: flex; align-items: center; }
-        .hero-flex { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; align-items: center; }
-        .hero-badge { display: inline-block; padding: 6px 16px; background: var(--border); border: 1px solid var(--border); border-radius: 50px; font-size: 0.8rem; font-weight: 700; margin-bottom: 20px; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; }
-        .hero h1 { font-size: 4.5rem; line-height: 1.1; margin-bottom: 25px; font-weight: 800; letter-spacing: -2px; }
-        .hero h1 span { background: var(--grad-linear); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero p { font-size: 1.2rem; color: var(--text-dim); line-height: 1.6; margin-bottom: 40px; }
-        .hero-btns { display: flex; gap: 15px; }
-        .trust-line { margin-top: 50px; font-size: 0.9rem; color: var(--text-dim); display: flex; gap: 20px; align-items: center; }
-        .trust-line span { display: flex; align-items: center; gap: 6px; }
-        .trust-line i { color: #22c55e; }
-
-        .hero-visual { position: relative; display: flex; justify-content: center; }
-        .floating-mock { width: 100%; max-width: 450px; animation: float 6s ease-in-out infinite; }
+        .hero { padding: 180px 0 100px; position: relative; overflow: hidden; }
+        .hero-flex { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
+        .hero-badge { display: inline-block; padding: 6px 16px; background: var(--border); border-radius: 50px; font-size: 0.8rem; color: var(--primary); margin-bottom: 20px; border: 1px solid var(--primary); }
+        .hero h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 25px; font-weight: 800; }
+        .hero p { font-size: 1.2rem; color: var(--text-dim); margin-bottom: 40px; line-height: 1.6; }
+        .hero-visual { position: relative; }
+        .hero-img { width: 100%; border-radius: 20px; animation: float 6s ease-in-out infinite; }
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
-        .mock-card { position: absolute; background: var(--surface-color); backdrop-filter: var(--glass); border: 1px solid var(--border); border-radius: 15px; padding: 15px; width: 180px; box-shadow: var(--card-shadow); }
-        .mock-1 { top: -20px; right: -20px; animation: float 5s ease-in-out infinite reverse; }
-        .mock-2 { bottom: 20px; left: -30px; animation: float 7s ease-in-out infinite; }
-
-        /* --- STATS --- */
-        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: -50px; position: relative; z-index: 10; }
-        .stat-card { text-align: center; }
-        .stat-card h3 { font-size: 2.5rem; font-weight: 800; color: var(--primary); margin-bottom: 5px; }
-        .stat-card p { font-size: 0.9rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
+        
+        /* Floating Blobs */
+        .blob { position: absolute; width: 300px; height: 300px; background: var(--primary); filter: blur(120px); opacity: 0.2; border-radius: 50%; z-index: -1; }
+        .blob-1 { top: 10%; left: -10%; }
+        .blob-2 { bottom: 10%; right: -10%; background: var(--accent); }
 
         /* --- SERVICES --- */
-        .section-title { text-align: center; margin-bottom: 60px; }
-        .section-title h2 { font-size: 3rem; margin-bottom: 15px; letter-spacing: -1px; }
-        .section-title p { color: var(--text-dim); max-width: 600px; margin: 0 auto; }
-        
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
-        .service-card { transition: 0.4s; position: relative; overflow: hidden; }
-        .service-card:hover { transform: translateY(-10px); border-color: var(--primary); }
-        .service-card i { font-size: 2.5rem; margin-bottom: 20px; display: block; color: var(--primary); }
-        .service-card h4 { font-size: 1.4rem; margin-bottom: 12px; }
-        .service-card .price { color: var(--accent); font-weight: 700; margin-bottom: 20px; display: block; font-size: 1.1rem; }
-        .service-btns { display: flex; gap: 10px; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; }
+        .service-card { padding: 30px; transition: 0.4s; }
+        .service-card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 10px 30px var(--glow); }
+        .service-card i { font-size: 2rem; color: var(--primary); margin-bottom: 20px; }
+        .service-card h4 { margin-bottom: 12px; font-size: 1.2rem; }
+        .service-card p { font-size: 0.9rem; color: var(--text-dim); margin-bottom: 15px; }
+        .price-tag { font-weight: 700; color: var(--accent); }
 
-        /* --- DEMOS & FILTERS --- */
-        .filters { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }
-        .filter-btn { padding: 8px 20px; border-radius: 50px; background: var(--surface-color); border: 1px solid var(--border); color: var(--text-dim); cursor: pointer; transition: 0.3s; }
-        .filter-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
-
-        .demo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px; }
-        .demo-card { border-radius: 20px; overflow: hidden; background: var(--surface-color); border: 1px solid var(--border); }
-        .demo-img { height: 220px; background: #1e293b; overflow: hidden; position: relative; }
-        .demo-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .demo-card:hover .demo-img img { transform: scale(1.1); }
-        .demo-info { padding: 25px; }
-        .demo-badge { font-size: 0.7rem; background: var(--border); padding: 4px 10px; border-radius: 4px; color: var(--accent); text-transform: uppercase; font-weight: 700; margin-bottom: 10px; display: inline-block; }
-
-        /* --- PRICING --- */
-        .pricing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-        .price-card { position: relative; }
-        .price-card.popular { border: 2px solid var(--primary); transform: scale(1.05); z-index: 5; }
-        .price-card .tag { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--primary); color: white; padding: 4px 15px; border-radius: 50px; font-size: 0.7rem; font-weight: 800; }
-        .price-card h4 { font-size: 1.2rem; margin-bottom: 10px; }
-        .price-card .amt { font-size: 2.2rem; font-weight: 800; margin-bottom: 20px; }
-        .price-card .amt span { font-size: 1rem; color: var(--text-dim); font-weight: 400; }
-        .price-features { list-style: none; margin-bottom: 30px; }
-        .price-features li { margin-bottom: 12px; font-size: 0.9rem; color: var(--text-dim); display: flex; align-items: center; gap: 10px; }
-        .price-features li i { color: #22c55e; font-size: 0.8rem; }
-        .extra-note { text-align: center; margin-top: 30px; font-size: 0.85rem; color: var(--text-dim); }
-
-        /* --- PROCESS --- */
-        .process-steps { display: flex; justify-content: space-between; position: relative; margin-top: 50px; }
-        .process-steps::before { content: ''; position: absolute; top: 40px; left: 50px; right: 50px; height: 2px; background: var(--border); z-index: 1; }
-        .step { position: relative; z-index: 2; text-align: center; flex: 1; }
-        .step-icon { width: 80px; height: 80px; background: var(--surface-color); border: 2px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.8rem; color: var(--primary); transition: 0.3s; }
-        .step:hover .step-icon { border-color: var(--primary); box-shadow: 0 0 20px var(--glow); transform: scale(1.1); }
-        .step h5 { font-size: 1.1rem; margin-bottom: 8px; }
-        .step p { font-size: 0.85rem; color: var(--text-dim); padding: 0 15px; }
+        /* --- CHIPS --- */
+        .chips-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+        .chip { padding: 12px 25px; border-radius: 50px; background: var(--surface); border: 1px solid var(--border); cursor: pointer; transition: 0.3s; }
+        .chip:hover { background: var(--primary); color: #000; border-color: var(--primary); }
 
         /* --- FAQ --- */
         .faq-container { max-width: 800px; margin: 0 auto; }
-        .faq-item { margin-bottom: 15px; border-radius: 15px; overflow: hidden; background: var(--surface-color); border: 1px solid var(--border); }
-        .faq-header { padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; }
-        .faq-content { padding: 0 20px; max-height: 0; overflow: hidden; transition: 0.3s ease-out; color: var(--text-dim); line-height: 1.6; }
-        .faq-item.active .faq-content { padding: 0 20px 20px; max-height: 200px; }
-        .faq-item.active .faq-header i { transform: rotate(180deg); color: var(--primary); }
+        .faq-item { margin-bottom: 15px; }
+        .faq-question { padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; }
+        .faq-answer { padding: 0 20px 20px; display: none; color: var(--text-dim); font-size: 0.95rem; line-height: 1.6; }
+        .faq-item.active .faq-answer { display: block; }
 
-        /* --- CONTACT --- */
-        .contact-flex { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 50px; }
-        .contact-info p { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; color: var(--text-dim); }
-        .contact-info i { width: 45px; height: 45px; background: var(--border); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.2rem; }
-        
-        .contact-form .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
-        .contact-form input, .contact-form select, .contact-form textarea {
-            width: 100%; padding: 15px; border-radius: 12px; background: var(--bg-color); border: 1px solid var(--border); color: var(--text-main); outline: none; transition: 0.3s;
-        }
-        .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { border-color: var(--primary); box-shadow: 0 0 15px var(--glow); }
-        .hp { display: none; } /* Honeypot */
+        /* --- INQUIRY FORM --- */
+        .contact-section { padding: 100px 0; }
+        .inquiry-form { padding: 40px; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .full-row { grid-column: span 2; }
+        input, select, textarea { width: 100%; padding: 15px; border-radius: 12px; background: var(--bg); border: 1px solid var(--border); color: var(--text-main); outline: none; transition: 0.3s; }
+        input:focus, select:focus, textarea:focus { border-color: var(--primary); box-shadow: 0 0 10px var(--glow); }
 
         /* --- FOOTER --- */
-        footer { padding: 80px 0 40px; background: var(--bg-color); border-top: 1px solid var(--border); }
-        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 50px; }
-        .footer-logo p { margin-top: 15px; color: var(--text-dim); font-size: 0.9rem; }
+        footer { padding: 80px 0 30px; border-top: 1px solid var(--border); margin-top: 100px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 50px; }
         .footer-col h5 { margin-bottom: 20px; font-size: 1.1rem; }
-        .footer-col ul { list-style: none; }
-        .footer-col ul li { margin-bottom: 12px; }
-        .footer-col ul li a { text-decoration: none; color: var(--text-dim); font-size: 0.9rem; transition: 0.3s; }
-        .footer-col ul li a:hover { color: var(--primary); padding-left: 5px; }
-        .social-links { display: flex; gap: 15px; margin-top: 20px; }
-        .social-links a { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--text-dim); transition: 0.3s; }
-        .social-links a:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-3px); }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { text-decoration: none; color: var(--text-dim); transition: 0.3s; }
+        .footer-links a:hover { color: var(--primary); }
 
-        /* --- FLOATING WA --- */
-        .wa-float { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: #25d366; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4); z-index: 999; transition: 0.3s; }
-        .wa-float:hover { transform: scale(1.1) rotate(10deg); }
-
-        /* --- TOAST --- */
-        #toast { position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%); padding: 12px 30px; border-radius: 50px; color: white; font-weight: 600; opacity: 0; visibility: hidden; transition: 0.3s; z-index: 10001; }
-        #toast.success { background: #10b981; }
-        #toast.error { background: #ef4444; }
-        #toast.show { opacity: 1; visibility: visible; bottom: 50px; }
-
-        /* --- RESPONSIVENESS --- */
-        @media (max-width: 1024px) {
-            .hero h1 { font-size: 3.5rem; }
-            .pricing-grid { grid-template-columns: repeat(2, 1fr); }
-            .process-steps { flex-direction: column; gap: 30px; }
-            .process-steps::before { display: none; }
-            .footer-grid { grid-template-columns: 1fr 1fr; }
-        }
+        /* --- MISC --- */
+        #cursor-glow { position: fixed; width: 400px; height: 400px; background: radial-gradient(circle, var(--glow) 0%, transparent 70%); pointer-events: none; z-index: -1; transform: translate(-50%, -50%); opacity: 0.5; }
+        .wa-float { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: white; box-shadow: 0 10px 20px rgba(0,0,0,0.2); z-index: 999; }
+        #toast { position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%); background: #10b981; color: white; padding: 12px 30px; border-radius: 50px; z-index: 10002; display: none; }
 
         @media (max-width: 768px) {
-            .nav-links, .nav-right .btn-outline { display: none; }
-            .hamburger { display: block; }
-            .hero-flex { grid-template-columns: 1fr; text-align: center; }
-            .hero h1 { font-size: 2.8rem; }
-            .hero-btns, .trust-line { justify-content: center; flex-wrap: wrap; }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .contact-flex { grid-template-columns: 1fr; }
-            .contact-form .input-row { grid-template-columns: 1fr; }
-            .pricing-grid { grid-template-columns: 1fr; }
-            .price-card.popular { transform: none; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero-flex, .form-grid, .footer-grid { grid-template-columns: 1fr; }
+            .nav-menu { display: none; }
+            .full-row { grid-column: span 1; }
         }
 
-        /* Scroll Reveal */
-        .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease; }
         .reveal.active { opacity: 1; transform: translateY(0); }
     </style>
 </head>
-<body>
+<body id="page-body">
+
+    <!-- Cursor Glow -->
+    <div id="cursor-glow"></div>
 
     <!-- Section 1: Loader -->
     <div id="loader">
-        <div class="loader-logo">AS WEB SOLUTIONS</div>
-        <div class="loader-bar"><div class="loader-progress"></div></div>
-        <p style="color: #9ca3af; font-size: 0.8rem; margin-top: 15px; letter-spacing: 2px;">BUILDING DIGITAL EXPERIENCES...</p>
+        <div class="loader-logo logo">AS <span>Web Solutions</span></div>
+        <div style="color: var(--text-dim); margin-bottom: 10px; font-size: 0.9rem;">Loading Premium Experience...</div>
+        <div class="progress-container"><div class="progress-bar"></div></div>
     </div>
 
-    <!-- Background Elements -->
-    <canvas id="bg-canvas"></canvas>
-    <div class="blob"></div>
-    <div id="cursor-glow"></div>
-
-    <!-- Section 2: Navbar -->
-    <nav id="navbar">
-        <div class="container nav-content">
-            <a href="#" class="logo"><i class="fas fa-bolt"></i> AS Web Solutions</a>
-            
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
+    <!-- Section 2: Header -->
+    <header id="main-header">
+        <div class="container nav-flex">
+            <a href="#" class="logo">AS <span>Web Solutions</span></a>
+            <ul class="nav-menu">
                 <li><a href="#services">Services</a></li>
-                <li><a href="#demos">Demos</a></li>
-                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#explore">Explore</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-
-            <div class="nav-right">
-                <div class="theme-toggle" id="themeBtn" title="Toggle Theme"><i class="fas fa-moon"></i></div>
-                <a href="index.html" class="btn btn-outline" style="padding: 10px 20px; font-size: 0.9rem;">Client Login</a>
-                <a href="#contact" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.9rem;">Get Quote</a>
-                <div class="hamburger" id="menuToggle"><i class="fas fa-bars"></i></div>
-            </div>
-        </div>
-        <!-- Mobile Dropdown -->
-        <div id="mobileMenu" style="display:none; padding: 20px; background: var(--bg-color); border-bottom: 1px solid var(--border);">
-            <ul style="list-style:none; display:flex; flex-direction:column; gap:15px;">
-                <li><a href="#home" class="btn-outline btn" style="width:100%">Home</a></li>
-                <li><a href="#services" class="btn-outline btn" style="width:100%">Services</a></li>
-                <li><a href="#demos" class="btn-outline btn" style="width:100%">Demos</a></li>
-                <li><a href="index.html" class="btn-primary btn" style="width:100%">Client Login</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Section 3: Hero -->
-    <header class="hero container" id="home">
-        <div class="hero-flex">
-            <div class="hero-text reveal">
-                <span class="hero-badge">Premium Web & App Agency</span>
-                <h1>We Build <span>Premium</span> Websites & Apps</h1>
-                <p>AS Web Solutions helps businesses grow online with modern websites, ecommerce stores, mobile apps, and high-performance digital marketing solutions.</p>
-                <div class="hero-btns">
-                    <a href="#demos" class="btn btn-primary">View Demo Websites <i class="fas fa-arrow-right"></i></a>
-                    <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer" class="btn btn-outline"><i class="fab fa-whatsapp"></i> Get Free Quote</a>
-                </div>
-                <div class="trust-line">
-                    <span><i class="fas fa-check-circle"></i> Fast Delivery</span>
-                    <span><i class="fas fa-check-circle"></i> Premium UI</span>
-                    <span><i class="fas fa-check-circle"></i> SEO Ready</span>
-                </div>
-            </div>
-            <div class="hero-visual reveal">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop" class="floating-mock glass-card" alt="Tech Showcase">
-                <div class="mock-card mock-1">
-                    <p style="font-size: 0.7rem; color: var(--text-dim);">Live Users</p>
-                    <h5 style="font-size: 1.2rem;">1,280+</h5>
-                    <div style="width:100%; height:4px; background:#22c55e; margin-top:5px; border-radius:2px;"></div>
-                </div>
-                <div class="mock-card mock-2">
-                    <p style="font-size: 0.7rem; color: var(--text-dim);">Conversions</p>
-                    <h5 style="font-size: 1.2rem;">98.4%</h5>
-                </div>
+            <div class="profile-trigger" id="profile-btn">
+                <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" id="nav-user-img" alt="User">
+                <span id="nav-user-name" style="font-weight: 600; font-size: 0.9rem;">Customer</span>
+                <i class="fas fa-chevron-down" style="font-size: 0.7rem;"></i>
             </div>
         </div>
     </header>
 
-    <!-- Section 4: Stats -->
-    <section class="container reveal">
-        <div class="stats-grid glass-card">
-            <div class="stat-card">
-                <h3 class="counter" data-target="20">0</h3>
-                <p>Categories</p>
+    <!-- Section 3: Profile Panel -->
+    <div id="profile-panel" class="glass">
+        <div class="panel-header">
+            <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" id="panel-img" alt="Profile">
+            <h3 id="panel-name">User Name</h3>
+            <p id="panel-email" style="color: var(--text-dim); font-size: 0.8rem;">user@example.com</p>
+        </div>
+
+        <div class="input-group">
+            <label>Update Name</label>
+            <input type="text" id="update-name" placeholder="Full Name">
+        </div>
+        <div class="input-group">
+            <label>Profile Photo URL</label>
+            <input type="text" id="update-photo" placeholder="https://image-link.com">
+        </div>
+        <button class="btn btn-primary" id="save-profile" style="width: 100%; margin-bottom: 20px;">Save Profile</button>
+
+        <div class="settings-row">
+            <span>Dark Mode</span>
+            <input type="checkbox" id="theme-toggle" checked>
+        </div>
+        <div class="settings-row">
+            <span>Brightness</span>
+            <input type="range" id="brightness-slider" min="50" max="150" value="100">
+        </div>
+
+        <div style="margin-top: 20px; border-top: 1px solid var(--border); padding-top: 20px;">
+            <p style="font-size: 0.75rem; color: var(--text-dim); margin-bottom: 10px;">Security</p>
+            <button class="btn btn-outline" id="reset-pass" style="width: 100%; font-size: 0.8rem; margin-bottom: 10px;">Send Password Reset Email</button>
+            <button class="btn" id="logout-btn" style="width: 100%; background: #ef4444; color: white;">Logout</button>
+        </div>
+    </div>
+
+    <!-- Section 4: Hero -->
+    <section class="hero">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="container hero-flex">
+            <div class="hero-content reveal">
+                <span class="hero-badge">Premium Website Development Agency</span>
+                <h1>We Build <span>Premium</span> Websites For Modern Businesses</h1>
+                <p>AS Web Solutions helps businesses grow online with modern websites, ecommerce stores, SEO setup and professional digital presence.</p>
+                <div style="display:flex; gap: 15px;">
+                    <a href="catalog.html" class="btn btn-primary">Explore Services <i class="fas fa-arrow-right"></i></a>
+                    <a href="https://wa.me/918087585398" class="btn btn-outline" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Inquiry</a>
+                </div>
+                <div style="margin-top: 40px; font-size: 0.9rem; color: var(--text-dim);">
+                    Fast Delivery • Premium UI • Mobile Friendly • SEO Ready
+                </div>
             </div>
-            <div class="stat-card">
-                <h3 class="counter" data-target="50">0</h3>
-                <p>Demos</p>
-            </div>
-            <div class="stat-card">
-                <h3 class="counter" data-target="7">0</h3>
-                <p>Days Delivery</p>
-            </div>
-            <div class="stat-card">
-                <h3 class="counter" data-target="100">0</h3>
-                <p>% Responsive</p>
+            <div class="hero-visual reveal">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop" class="hero-img glass" alt="Tech Visual">
             </div>
         </div>
     </section>
 
     <!-- Section 5: Services -->
-    <section class="section-padding container" id="services">
+    <section class="container" id="services" style="padding-top: 100px;">
         <div class="section-title reveal">
             <h2>Our Premium Services</h2>
-            <p>From custom code to digital growth, we provide end-to-end solutions for modern enterprises.</p>
+            <p>Explore website solutions designed for businesses, brands, shops, institutes and professionals.</p>
         </div>
-        <div class="services-grid">
-            <div class="glass-card service-card reveal">
-                <i class="fas fa-laptop-code"></i>
-                <h4>Business Website</h4>
-                <p>Modern 5-page website for startups and small firms.</p>
-                <span class="price">Starts ₹4,999</span>
-                <div class="service-btns">
-                    <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 8px 15px; font-size: 0.8rem;">Inquire</a>
-                    <a href="#" class="btn btn-outline" style="padding: 8px 15px; font-size: 0.8rem;">Details</a>
-                </div>
-            </div>
-            <div class="glass-card service-card reveal">
-                <i class="fas fa-shopping-bag"></i>
-                <h4>Ecommerce Store</h4>
-                <p>Full-scale online shop with payment & inventory.</p>
-                <span class="price">Starts ₹24,999</span>
-                <div class="service-btns">
-                    <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 8px 15px; font-size: 0.8rem;">Inquire</a>
-                    <a href="#" class="btn btn-outline" style="padding: 8px 15px; font-size: 0.8rem;">Details</a>
-                </div>
-            </div>
-            <div class="glass-card service-card reveal">
-                <i class="fas fa-mobile-screen"></i>
-                <h4>App Development</h4>
-                <p>Premium Android & iOS apps with custom features.</p>
-                <span class="price">Custom Pricing</span>
-                <div class="service-btns">
-                    <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 8px 15px; font-size: 0.8rem;">Inquire</a>
-                </div>
-            </div>
-            <!-- More cards omitted for brevity, logic remains identical -->
+        <div class="services-grid" id="service-container">
+            <!-- Dynamically filled by JS -->
+        </div>
+        <div style="text-align: center; margin-top: 50px;" class="reveal">
+            <a href="catalog.html" class="btn btn-outline">Explore Full Catalog</a>
         </div>
     </section>
 
-    <!-- Section 6: Demos -->
-    <section class="section-padding container" id="demos">
+    <!-- Section 6: Demo Categories -->
+    <section class="container" id="explore" style="padding-top: 120px;">
         <div class="section-title reveal">
-            <h2>Premium Demo Websites</h2>
-            <p>Choose from our library of 50+ conversion-optimized designs.</p>
+            <h2>Explore Demo Website Categories</h2>
+            <p>Choose a demo category and we will customize it for your business.</p>
         </div>
-        <div class="filters reveal">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="business">Business</button>
-            <button class="filter-btn" data-filter="ecommerce">Ecommerce</button>
-            <button class="filter-btn" data-filter="luxury">Luxury</button>
+        <div class="chips-container reveal" id="category-chips">
+            <!-- Chips generated by JS -->
         </div>
-        <div class="demo-grid" id="demoContainer">
-            <!-- Filterable Demo Cards -->
-            <div class="demo-card reveal" data-category="business">
-                <div class="demo-img"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=400" alt="Corporate"></div>
-                <div class="demo-info">
-                    <span class="demo-badge">Business</span>
-                    <h4>Corporate Suite</h4>
-                    <p style="color:var(--text-dim); font-size: 0.85rem; margin-bottom: 15px;">Ideal for consultancy & law firms.</p>
-                    <div class="service-btns">
-                        <a href="#" class="btn btn-outline" style="flex:1; font-size: 0.8rem;">Preview</a>
-                        <a href="https://wa.me/91XXXXXXXXXX" class="btn btn-primary" style="flex:1; font-size: 0.8rem;"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="demo-card reveal" data-category="ecommerce">
-                <div class="demo-img"><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=400" alt="Fashion"></div>
-                <div class="demo-info">
-                    <span class="demo-badge">Ecommerce</span>
-                    <h4>Fashion Hub</h4>
-                    <p style="color:var(--text-dim); font-size: 0.85rem; margin-bottom: 15px;">Clothing & Accessory store.</p>
-                    <div class="service-btns">
-                        <a href="#" class="btn btn-outline" style="flex:1; font-size: 0.8rem;">Preview</a>
-                        <a href="https://wa.me/91XXXXXXXXXX" class="btn btn-primary" style="flex:1; font-size: 0.8rem;"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-            </div>
+        <div style="text-align: center; margin-top: 40px;" class="reveal">
+            <a href="catalog.html" class="btn btn-primary">Open Catalog</a>
         </div>
     </section>
 
-    <!-- Section 8: Pricing -->
-    <section class="section-padding container" id="pricing">
-        <div class="section-title reveal">
-            <h2>Transparent Pricing</h2>
-            <p>No hidden fees. Premium quality at competitive rates.</p>
-        </div>
-        <div class="pricing-grid">
-            <div class="glass-card price-card reveal">
-                <h4>Starter</h4>
-                <div class="amt">₹4,999<span>/total</span></div>
-                <ul class="price-features">
-                    <li><i class="fas fa-check"></i> 5 Premium Pages</li>
-                    <li><i class="fas fa-check"></i> WhatsApp Integration</li>
-                    <li><i class="fas fa-check"></i> Basic SEO</li>
-                </ul>
-                <a href="#contact" class="btn btn-outline" style="width:100%">Choose Plan</a>
-            </div>
-            <div class="glass-card price-card popular reveal">
-                <div class="tag">MOST POPULAR</div>
-                <h4>Premium</h4>
-                <div class="amt">₹14,999<span>/total</span></div>
-                <ul class="price-features">
-                    <li><i class="fas fa-check"></i> 15 Custom Pages</li>
-                    <li><i class="fas fa-check"></i> Dynamic Animations</li>
-                    <li><i class="fas fa-check"></i> Advance SEO Setup</li>
-                    <li><i class="fas fa-check"></i> Admin Dashboard</li>
-                </ul>
-                <a href="#contact" class="btn btn-primary" style="width:100%">Choose Plan</a>
-            </div>
-            <!-- More plans omitted for brevity -->
-        </div>
-        <p class="extra-note">* Domain & Hosting charges are extra as per provider.</p>
-    </section>
-
-    <!-- Section 12: FAQ -->
-    <section class="section-padding container">
+    <!-- Section 7: FAQ -->
+    <section class="container" style="padding-top: 120px;">
         <div class="section-title reveal">
             <h2>Common Questions</h2>
         </div>
-        <div class="faq-container reveal">
-            <div class="faq-item">
-                <div class="faq-header">Website price किती आहे? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-content">आमची सुरुवात ₹4,999 पासून होते, कामाच्या व्याप्तीनुसार किंमत बदलू शकते.</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-header">Delivery किती दिवसात मिळेल? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-content">साधारणपणे 3 ते 7 दिवसात आम्ही वेबसाईट लाईव्ह करतो.</div>
-            </div>
+        <div class="faq-container reveal" id="faq-list">
+            <!-- FAQ generated by JS -->
         </div>
     </section>
 
-    <!-- Section 13: Contact Form -->
-    <section class="section-padding container" id="contact">
-        <div class="glass-card reveal">
-            <div class="contact-flex">
-                <div class="contact-info">
-                    <h2>Get Free Quote</h2>
-                    <p>Contact us to start your digital journey today.</p>
-                    <div style="margin-top: 30px;">
-                        <p><i class="fas fa-envelope"></i> hello@asweb.com</p>
-                        <p><i class="fas fa-phone"></i> +91 91XX XX XX XX</p>
-                        <p><i class="fas fa-location-dot"></i> Maharashtra, India</p>
-                    </div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
+    <!-- Section 8: Inquiry Form -->
+    <section class="contact-section container" id="contact">
+        <div class="glass inquiry-form reveal">
+            <div class="section-title">
+                <h2>Send Your Website Inquiry</h2>
+            </div>
+            <form id="inquiryForm">
+                <div class="form-grid">
+                    <input type="text" id="form-name" placeholder="Full Name" required>
+                    <input type="tel" id="form-phone" placeholder="Phone Number" required>
+                    <input type="text" id="form-business" placeholder="Business Name" class="full-row">
+                    <select id="form-type" class="full-row">
+                        <option value="">Select Website Type</option>
+                        <!-- Options generated by JS -->
+                    </select>
+                    <input type="text" id="form-budget" placeholder="Budget Range (e.g. ₹10k - ₹20k)">
+                    <textarea id="form-message" rows="4" placeholder="Your Message" class="full-row"></textarea>
                 </div>
-                <form class="contact-form" id="contactForm">
-                    <input type="text" name="hp_field" class="hp" id="hp"> <!-- Honeypot -->
-                    <div class="input-row">
-                        <input type="text" id="userName" placeholder="Your Name" required autocomplete="name">
-                        <input type="tel" id="userPhone" placeholder="Phone Number" required autocomplete="tel">
-                    </div>
-                    <div class="input-row">
-                        <select id="webType">
-                            <option value="">Select Website Type</option>
-                            <option value="business">Business</option>
-                            <option value="ecommerce">Ecommerce</option>
-                            <option value="custom">Custom App</option>
-                        </select>
-                        <input type="text" id="budget" placeholder="Approx. Budget (₹)">
-                    </div>
-                    <textarea id="message" rows="5" placeholder="Tell us about your requirements..."></textarea>
-                    <div style="display:flex; gap:10px; margin-top:20px;">
-                        <button type="submit" class="btn btn-primary" style="flex:1">Send Inquiry</button>
-                        <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer" class="btn btn-outline"><i class="fab fa-whatsapp"></i> Chat</a>
-                    </div>
-                </form>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 20px;">Send via WhatsApp</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Section 9: CTA -->
+    <section class="container reveal" style="text-align: center; padding: 60px 0;">
+        <div class="glass" style="padding: 60px 20px;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Ready To Grow Your Business Online?</h2>
+            <p style="color: var(--text-dim); margin-bottom: 30px;">Let’s build a premium website that brings trust, leads and customers to your business.</p>
+            <div style="display:flex; gap: 15px; justify-content: center;">
+                <a href="catalog.html" class="btn btn-primary">Explore Catalog</a>
+                <a href="https://wa.me/918087585398" class="btn btn-outline" target="_blank">Chat On WhatsApp</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Section 10: Footer -->
     <footer>
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-logo">
-                    <a href="#" class="logo"><i class="fas fa-bolt"></i> AS Web Solutions</a>
-                    <p>We Build Brands, Websites & Futures. High-performance digital solutions for the modern age.</p>
+                <div>
+                    <a href="#" class="logo">AS <span>Web Solutions</span></a>
+                    <p style="color: var(--text-dim); margin-top: 15px; font-size: 0.9rem;">“We Build Brands, Websites & Futures”</p>
                 </div>
-                <div class="footer-col">
-                    <h5>Links</h5>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
+                <div>
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
                         <li><a href="#services">Services</a></li>
-                        <li><a href="index.html">Client Login</a></li>
+                        <li><a href="#explore">Explore</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h5>Services</h5>
-                    <ul>
-                        <li><a href="#">Ecommerce</a></li>
-                        <li><a href="#">App Dev</a></li>
-                        <li><a href="#">SEO</a></li>
+                <div>
+                    <h5>Community</h5>
+                    <ul class="footer-links">
+                        <li><a href="https://t.me/aswebsolutions" target="_blank">Telegram</a></li>
+                        <li><a href="https://wa.me/918087585398" target="_blank">WhatsApp</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
+                <div>
                     <h5>Follow Us</h5>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <div style="display:flex; gap:15px; font-size: 1.2rem;">
+                        <a href="#" class="footer-links"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer-links"><i class="fab fa-facebook"></i></a>
                     </div>
                 </div>
             </div>
-            <p style="text-align:center; color:var(--text-dim); font-size:0.8rem; margin-top:30px;">
+            <p style="text-align: center; font-size: 0.8rem; color: var(--text-dim); border-top: 1px solid var(--border); padding-top: 30px;">
                 © 2026 AS Web Solutions. All Rights Reserved.
             </p>
         </div>
     </footer>
 
     <!-- Floating UI -->
-    <a href="https://wa.me/91XXXXXXXXXX" class="wa-float" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp">
+    <a href="https://wa.me/918087585398" class="wa-float" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
     </a>
-    <div id="toast"></div>
+    <div id="toast">Message Sent!</div>
 
-    <script>
-        // --- 1. THEME TOGGLE ---
-        const themeBtn = document.getElementById('themeBtn');
-        const currentTheme = localStorage.getItem('theme') || 'dark';
-        document.documentElement.setAttribute('data-theme', currentTheme);
-        themeBtn.innerHTML = currentTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAuth, onAuthStateChanged, signOut, updateProfile, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 
-        themeBtn.addEventListener('click', () => {
-            const theme = document.documentElement.getAttribute('data-theme');
-            const newTheme = theme === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            themeBtn.innerHTML = newTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        const firebaseConfig = {
+            apiKey: "AIzaSyAPlPY3Da0wNXUUXShdFZggt81hKztAiRI",
+            authDomain: "aswebsolutions-4401b.firebaseapp.com",
+            projectId: "aswebsolutions-4401b",
+            storageBucket: "aswebsolutions-4401b.firebasestorage.app",
+            messagingSenderId: "1085988134291",
+            appId: "1:1085988134291:web:3f4f6f3a0a5652d2ce9c66",
+            measurementId: "G-D8TM1S52E6"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // --- AUTH PROTECTION ---
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                updateUI(user);
+                document.getElementById('loader').style.display = 'none';
+            } else {
+                window.location.href = 'index.html';
+            }
         });
 
-        // --- 2. LOADER ---
-        window.addEventListener('load', () => {
-            const loader = document.getElementById('loader');
-            setTimeout(() => {
-                loader.style.opacity = '0';
-                loader.style.visibility = 'hidden';
-            }, 1500);
-        });
+        // --- DATA ---
+        const services = [
+            { icon: 'fa-briefcase', title: 'Business Website', desc: 'Professional 5-page site for small firms.', price: 'Starts ₹4,999' },
+            { icon: 'fa-building', title: 'Premium Corporate', desc: 'Advanced sites for large companies.', price: 'Starts ₹14,999' },
+            { icon: 'fa-shopping-cart', title: 'Ecommerce Website', desc: 'Full online store with payment setup.', price: 'Starts ₹19,999' },
+            { icon: 'fa-utensils', title: 'Restaurant Website', desc: 'Menu showcase and online booking.', price: 'Starts ₹7,999' },
+            { icon: 'fa-hospital', title: 'Hospital Website', desc: 'Service listing and doctor info.', price: 'Starts ₹12,999' },
+            { icon: 'fa-tooth', title: 'Dental Clinic', desc: 'Dedicated site for dental practices.', price: 'Starts ₹7,999' },
+            { icon: 'fa-dumbbell', title: 'Gym Website', desc: 'Membership and plan showcase.', price: 'Starts ₹6,999' },
+            { icon: 'fa-scissors', title: 'Salon / Spa', desc: 'Service menu and gallery.', price: 'Starts ₹5,999' },
+            { icon: 'fa-graduation-cap', title: 'School / College', desc: 'Complete education portal.', price: 'Starts ₹15,999' },
+            { icon: 'fa-book-open', title: 'Coaching Class', desc: 'Subject listing and inquiry.', price: 'Starts ₹6,999' },
+            { icon: 'fa-search', title: 'SEO Services', desc: 'Boost your Google rankings.', price: 'Custom' },
+            { icon: 'fa-tools', title: 'Website Maintenance', desc: 'Monthly updates and security.', price: 'Starts ₹1,499' }
+        ];
 
-        // --- 3. CURSOR GLOW ---
-        const cursor = document.getElementById('cursor-glow');
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
+        const faqs = [
+            { q: "How much does a website cost?", a: "Website pricing starts from ₹4,999 depending on design, pages and features." },
+            { q: "Is domain and hosting included?", a: "Domain and hosting charges are extra. We can guide you in buying and connecting them." },
+            { q: "How long does delivery take?", a: "Basic websites usually take 3–5 days. Premium websites may take 7–15 days." },
+            { q: "Will my website be mobile friendly?", a: "Yes, every website is fully responsive for mobile, tablet and desktop." },
+            { q: "Do you provide WhatsApp integration?", a: "Yes, WhatsApp chat and inquiry buttons can be added." }
+        ];
 
-        // --- 4. SCROLL EFFECTS ---
-        const nav = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) nav.classList.add('scrolled');
-            else nav.classList.remove('scrolled');
-            reveal();
-        });
+        const categories = ["Business", "Ecommerce", "Healthcare", "Food & Restaurant", "Fitness", "Education", "Real Estate", "Travel", "Luxury Brands", "Local Business"];
 
-        function reveal() {
-            const reveals = document.querySelectorAll('.reveal');
-            reveals.forEach(el => {
-                const windowHeight = window.innerHeight;
-                const elementTop = el.getBoundingClientRect().top;
-                if (elementTop < windowHeight - 100) el.classList.add('active');
+        // --- INITIALIZE UI ---
+        function init() {
+            // Render Services
+            const sGrid = document.getElementById('service-container');
+            services.forEach(s => {
+                sGrid.innerHTML += `
+                    <div class="glass service-card reveal">
+                        <i class="fas ${s.icon}"></i>
+                        <h4>${s.title}</h4>
+                        <p>${s.desc}</p>
+                        <span class="price-tag">${s.price}</span>
+                    </div>
+                `;
             });
+
+            // Render Chips
+            const cGrid = document.getElementById('category-chips');
+            categories.forEach(c => {
+                cGrid.innerHTML += `<div class="chip">${c}</div>`;
+            });
+
+            // Render FAQs
+            const fGrid = document.getElementById('faq-list');
+            faqs.forEach(f => {
+                fGrid.innerHTML += `
+                    <div class="glass faq-item reveal">
+                        <div class="faq-question">${f.q} <i class="fas fa-plus"></i></div>
+                        <div class="faq-answer">${f.a}</div>
+                    </div>
+                `;
+            });
+
+            // Render Dropdown
+            const select = document.getElementById('form-type');
+            services.forEach(s => {
+                const opt = document.createElement('option');
+                opt.value = s.title;
+                opt.textContent = s.title;
+                select.appendChild(opt);
+            });
+
+            // Setup Theme
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            document.getElementById('theme-toggle').checked = savedTheme === 'dark';
+
+            // Setup Brightness
+            const savedB = localStorage.getItem('brightness') || 100;
+            document.getElementById('page-body').style.filter = `brightness(${savedB}%)`;
+            document.getElementById('brightness-slider').value = savedB;
         }
 
-        // --- 5. COUNTERS ---
-        const counters = document.querySelectorAll('.counter');
-        const observerOptions = { threshold: 0.5 };
-        const counterObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const target = +entry.target.getAttribute('data-target');
-                    const count = +entry.target.innerText;
-                    const increment = target / 50;
-                    const updateCount = () => {
-                        const current = +entry.target.innerText;
-                        if (current < target) {
-                            entry.target.innerText = Math.ceil(current + increment);
-                            setTimeout(updateCount, 20);
-                        } else {
-                            entry.target.innerText = target + (target === 100 ? '%' : '+');
-                        }
-                    };
-                    updateCount();
-                    counterObserver.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-        counters.forEach(c => counterObserver.observe(c));
-
-        // --- 6. DEMO FILTER ---
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const demoCards = document.querySelectorAll('.demo-card');
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const filter = btn.getAttribute('data-filter');
-
-                demoCards.forEach(card => {
-                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-
-        // --- 7. FAQ ACCORDION ---
-        document.querySelectorAll('.faq-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const item = header.parentElement;
-                item.classList.toggle('active');
-            });
-        });
-
-        // --- 8. FORM VALIDATION & SECURITY ---
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
+        function updateUI(user) {
+            const name = user.displayName || localStorage.getItem('uName') || "Customer";
+            const photo = user.photoURL || localStorage.getItem('uPhoto') || "https://cdn-icons-png.flaticon.com/512/149/149071.png";
             
-            // Honeypot check
-            if (document.getElementById('hp').value !== "") return;
+            document.getElementById('nav-user-name').innerText = name;
+            document.getElementById('nav-user-img').src = photo;
+            document.getElementById('panel-img').src = photo;
+            document.getElementById('panel-name').innerText = name;
+            document.getElementById('panel-email').innerText = user.email;
+        }
 
-            const name = document.getElementById('userName').value.trim();
-            const phone = document.getElementById('userPhone').value.trim();
+        // --- INTERACTIVE FEATURES ---
+        
+        // Profile Panel Toggle
+        document.getElementById('profile-btn').onclick = (e) => {
+            e.stopPropagation();
+            document.getElementById('profile-panel').classList.toggle('active');
+        };
+
+        window.onclick = () => {
+            document.getElementById('profile-panel').classList.remove('active');
+        };
+        document.getElementById('profile-panel').onclick = (e) => e.stopPropagation();
+
+        // Update Profile
+        document.getElementById('save-profile').onclick = async () => {
+            const newName = document.getElementById('update-name').value;
+            const newPhoto = document.getElementById('update-photo').value;
             
-            // Simple sanitization simulation
-            const cleanName = name.replace(/[<>]/g, "");
-
-            if (cleanName.length < 3 || phone.length < 10) {
-                showToast("Please enter valid details", "error");
-                return;
+            if (newName || newPhoto) {
+                try {
+                    await updateProfile(auth.currentUser, {
+                        displayName: newName || auth.currentUser.displayName,
+                        photoURL: newPhoto || auth.currentUser.photoURL
+                    });
+                    if (newName) localStorage.setItem('uName', newName);
+                    if (newPhoto) localStorage.setItem('uPhoto', newPhoto);
+                    updateUI(auth.currentUser);
+                    showToast("Profile Updated!");
+                } catch (e) { alert(e.message); }
             }
+        };
 
-            showToast("Inquiry Sent! We will contact you soon.", "success");
-            contactForm.reset();
+        // Pass Reset
+        document.getElementById('reset-pass').onclick = async () => {
+            await sendPasswordResetEmail(auth, auth.currentUser.email);
+            showToast("Reset Link Sent!");
+        };
+
+        // Logout
+        document.getElementById('logout-btn').onclick = async () => {
+            await signOut(auth);
+            localStorage.clear();
+            window.location.href = 'index.html';
+        };
+
+        // Theme
+        document.getElementById('theme-toggle').onchange = (e) => {
+            const theme = e.target.checked ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        };
+
+        // Brightness
+        document.getElementById('brightness-slider').oninput = (e) => {
+            const val = e.target.value;
+            document.getElementById('page-body').style.filter = `brightness(${val}%)`;
+            localStorage.setItem('brightness', val);
+        };
+
+        // FAQ Toggle
+        document.addEventListener('click', (e) => {
+            if (e.target.closest('.faq-question')) {
+                const item = e.target.closest('.faq-item');
+                item.classList.toggle('active');
+                item.querySelector('i').classList.toggle('fa-plus');
+                item.querySelector('i').classList.toggle('fa-minus');
+            }
         });
 
-        function showToast(msg, type) {
+        // WhatsApp Inquiry
+        document.getElementById('inquiryForm').onsubmit = (e) => {
+            e.preventDefault();
+            const name = document.getElementById('form-name').value;
+            const phone = document.getElementById('form-phone').value;
+            const business = document.getElementById('form-business').value;
+            const type = document.getElementById('form-type').value;
+            const budget = document.getElementById('form-budget').value;
+            const msg = document.getElementById('form-message').value;
+
+            const text = `*New Website Inquiry*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Business:* ${business}%0A*Type:* ${type}%0A*Budget:* ${budget}%0A*Message:* ${msg}`;
+            window.open(`https://wa.me/918087585398?text=${text}`, '_blank');
+            showToast("Opening WhatsApp...");
+        };
+
+        // Cursor Glow
+        document.addEventListener('mousemove', (e) => {
+            const glow = document.getElementById('cursor-glow');
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+        });
+
+        // Scroll Reveal
+        window.onscroll = () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+
+            document.querySelectorAll('.reveal').forEach(el => {
+                const top = el.getBoundingClientRect().top;
+                if (top < window.innerHeight - 100) el.classList.add('active');
+            });
+        };
+
+        function showToast(msg) {
             const t = document.getElementById('toast');
             t.innerText = msg;
-            t.className = `show ${type}`;
-            setTimeout(() => { t.className = ""; }, 3000);
+            t.style.display = 'block';
+            setTimeout(() => t.style.display = 'none', 3000);
         }
 
-        // --- 9. MOBILE MENU ---
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'block' : 'none';
-        });
-
-        // --- 10. BACKGROUND PARTICLES ---
-        const canvas = document.getElementById('bg-canvas');
-        const ctx = canvas.getContext('2d');
-        let particlesArray = [];
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2 + 0.1;
-                this.speedX = Math.random() * 0.5 - 0.25;
-                this.speedY = Math.random() * 0.5 - 0.25;
-            }
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                if (this.size > 0.2) this.size -= 0.001;
-            }
-            draw() {
-                ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--primary');
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-
-        function initParticles() {
-            for (let i = 0; i < 50; i++) particlesArray.push(new Particle());
-        }
-
-        function handleParticles() {
-            for (let i = 0; i < particlesArray.length; i++) {
-                particlesArray[i].update();
-                particlesArray[i].draw();
-                if (particlesArray[i].size <= 0.2) {
-                    particlesArray.splice(i, 1);
-                    i--;
-                    particlesArray.push(new Particle());
-                }
-            }
-        }
-
-        function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            handleParticles();
-            requestAnimationFrame(animateParticles);
-        }
-        initParticles();
-        animateParticles();
+        init();
     </script>
 </body>
 </html>
