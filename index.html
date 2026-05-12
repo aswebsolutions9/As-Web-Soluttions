@@ -602,7 +602,7 @@
             try {
                 await signInWithEmailAndPassword(auth, email, pass);
                 localStorage.setItem('as_user_email', email);
-                window.location.href = 'dashboard.html';
+                window.location.href = 'home.html';
             } catch (err) {
                 showAlert(parseError(err.code));
             } finally {
