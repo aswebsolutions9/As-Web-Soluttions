@@ -24,6 +24,11 @@
             --glass-panel: rgba(30, 41, 59, 0.7);
             --card-hover: rgba(255, 255, 255, 0.03);
             --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+            /* Golden Matrix Premium Design Variables */
+            --gold-grad: linear-gradient(135deg, #ffe066 0%, #f59e0b 50%, #b45309 100%);
+            --gold-glow: rgba(245, 158, 11, 0.3);
+            --gold-text: #f59e0b;
         }
 
         [data-theme="light"] {
@@ -36,6 +41,7 @@
             --glass-panel: rgba(248, 250, 252, 0.95);
             --card-hover: rgba(15, 23, 42, 0.02);
             --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.08);
+            --gold-glow: rgba(217, 119, 6, 0.2);
         }
 
         * {
@@ -61,7 +67,7 @@
             filter: brightness(100%) contrast(100%);
         }
 
-        /* Canvas Particle Background */
+        /* Canvas Interactive Particle Matrix Background */
         #particles-canvas {
             position: fixed;
             top: 0;
@@ -570,16 +576,7 @@
             align-items: center;
         }
 
-        .hero-glow-blob {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            filter: blur(100px);
-            opacity: 0.3;
-            z-index: 1;
-        }
-
+        /* Enhanced Floating Architecture Presentation Card */
         .hero-img-card {
             width: 100%;
             max-width: 450px;
@@ -591,29 +588,55 @@
             position: relative;
             border-radius: 24px;
             overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.1);
-            background: rgba(15, 23, 42, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15), rgba(15, 23, 42, 0.6));
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+            animation: cardFloat 5s ease-in-out infinite;
         }
 
         .hero-img-inner {
             text-align: center;
+            padding: 30px;
         }
 
         .hero-img-inner i {
-            font-size: 5rem;
-            background: var(--gradient);
+            font-size: 5.5rem;
+            background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
-            animation: float 4s ease-in-out infinite;
+            margin-bottom: 25px;
+            filter: drop-shadow(0 10px 15px rgba(99, 102, 241, 0.3));
         }
 
-        @keyframes float {
+        .floating-badge-node {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 10px 18px;
+            border-radius: 14px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .fb-1 { top: 40px; left: -20px; animation: itemFloat 4s ease-in-out infinite; }
+        .fb-2 { bottom: 60px; right: -20px; animation: itemFloat 4.5s ease-in-out infinite 0.5s; }
+
+        @keyframes cardFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(1deg); }
+        }
+
+        @keyframes itemFloat {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+            50% { transform: translateY(-10px); }
         }
 
-        /* Services Grid Layout */
+        /* Services Grid Layout Container */
         .section-header {
             text-align: center;
             margin-bottom: 60px;
@@ -632,88 +655,141 @@
             margin: 0 auto;
         }
 
-        .services-grid {
+        /* Premium Golden Single Showcase Grid Card Layout */
+        .gold-showcase-container {
+            max-width: 950px;
+            margin: 0 auto;
+        }
+
+        .gold-premium-card {
+            background: linear-gradient(135deg, rgba(20, 24, 39, 0.85) 0%, rgba(11, 15, 25, 0.95) 100%);
+            border: 2px solid #f59e0b;
+            border-radius: 24px;
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 45px var(--gold-glow);
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            padding: 35px;
-            transition: 0.4s ease;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(99, 102, 241, 0.3);
-            background: var(--card-hover);
-        }
-
-        .srv-icon {
-            width: 55px;
-            height: 55px;
-            border-radius: 12px;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
-            display: flex;
-            justify-content: center;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
             align-items: center;
-            font-size: 1.5rem;
-            color: var(--primary);
-            margin-bottom: 24px;
-            border: 1px solid rgba(99, 102, 241, 0.15);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
 
-        .service-card h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 12px;
+        .gold-premium-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 55px rgba(245, 158, 11, 0.45);
         }
 
-        .service-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.5;
-            margin-bottom: 25px;
-            flex-grow: 1;
+        .gold-premium-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(245, 158, 11, 0.08) 0%, transparent 60%);
+            pointer-events: none;
         }
 
-        .srv-price-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: auto;
-            padding-top: 15px;
-            border-top: 1px solid var(--glass-border);
-        }
-
-        .srv-price {
+        .gold-content h3 {
+            font-size: 2rem;
             font-weight: 800;
-            font-size: 1.3rem;
-            background: var(--gradient);
+            margin-bottom: 15px;
+            background: var(--gold-grad);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* Glowing Button Integration */
-        .srv-btn {
-            font-size: 0.85rem;
-            padding: 10px 18px;
-            border-radius: 8px;
-            text-decoration: none;
-            color: #fff;
-            background: var(--gradient);
+        .gold-content p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .gold-features-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .gold-features-list li {
+            font-size: 0.9rem;
             font-weight: 600;
-            transition: 0.3s;
-            box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-color);
+        }
+
+        .gold-features-list i {
+            color: var(--gold-text);
+        }
+
+        .gold-action-box {
+            text-align: center;
+            background: rgba(245, 158, 11, 0.04);
+            border: 1px dashed rgba(245, 158, 11, 0.25);
+            padding: 30px;
+            border-radius: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gold-action-box .price-tag {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+        }
+
+        .gold-action-box .main-price {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #fff;
+            background: var(--gold-grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        /* Full Animated Matrix Glowing Golden Navigation Button */
+        .btn-gold-glowing {
+            width: 100%;
+            padding: 16px 30px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #0f172a !important;
+            background: var(--gold-grad);
+            background-size: 200% auto;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
             border: none;
             cursor: pointer;
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+            transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            animation: goldShine 3s infinite alternate;
         }
-        .srv-btn:hover {
-            box-shadow: 0 0 25px rgba(168, 85, 247, 0.7);
-            transform: scale(1.03);
+
+        .btn-gold-glowing:hover {
+            box-shadow: 0 0 35px rgba(245, 158, 11, 0.8);
+            transform: scale(1.02);
+            background-position: right center;
+        }
+
+        @keyframes goldShine {
+            0% { background-position: 0% center; }
+            100% { background-position: 100% center; }
         }
 
         /* Why Choose Us Section */
@@ -993,7 +1069,7 @@
             to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
-        /* Responsive Breakpoints */
+        /* Responsive Breakpoints Validation */
         @media (max-width: 992px) {
             .hero-section {
                 grid-template-columns: 1fr;
@@ -1004,6 +1080,14 @@
             .hero-badge { margin: 0 auto 20px auto; }
             .hero-btns { justify-content: center; }
             .hero-right { display: none; }
+            .gold-premium-card {
+                grid-template-columns: 1fr;
+                padding: 35px;
+                text-align: center;
+            }
+            .gold-features-list {
+                justify-content: center;
+            }
             .footer-grid { grid-template-columns: 1fr 1fr; }
         }
 
@@ -1027,6 +1111,7 @@
             }
             .hamburger { display: block; }
             .hero-title { font-size: 2.6rem; }
+            .gold-features-list { grid-template-columns: 1fr; }
             .inquiry-form { grid-template-columns: 1fr; }
             .form-full-width { grid-column: span 1; }
             .form-max-wrap { padding: 24px; }
@@ -1155,12 +1240,14 @@
                 </div>
                 <div class="hero-right reveal">
                     <div class="hero-glow-blob"></div>
-                    <div class="hero-img-card glass-card">
+                    <div class="hero-img-card">
                         <div class="hero-img-inner">
-                            <i class="fas fa-laptop-code"></i>
-                            <h3 style="font-weight:700;">AS Web Solutions</h3>
-                            <p style="color:var(--text-muted); font-size:0.9rem; margin-top:5px;">Next-Gen Architecture</p>
+                            <i class="fas fa-layer-group"></i>
+                            <h3 style="font-weight:800; font-size:1.4rem; letter-spacing:0.5px; margin-bottom:4px;">AS Web Solutions</h3>
+                            <p style="color:#a855f7; font-weight:700; font-size:0.85rem; text-transform:uppercase; letter-spacing:2px;">Next-Gen Architecture</p>
                         </div>
+                        <div class="floating-badge-node fb-1"><i class="fas fa-bolt" style="color:#f59e0b;"></i> Fast Response</div>
+                        <div class="floating-badge-node fb-2"><i class="fas fa-shield-halved" style="color:#10b981;"></i> Cloud Secure</div>
                     </div>
                 </div>
             </section>
@@ -1168,10 +1255,84 @@
             <section id="services" class="reveal">
                 <div class="section-header">
                     <h2>Our Premium Services</h2>
-                    <p>High-end digital systems completely optimized to grow, modernize, and transform your business properties online.</p>
+                    <p>High-end digital solutions explicitly constructed to transform digital brand assets and scale processing operations.</p>
                 </div>
-                <div class="services-grid" id="services-target-node">
+                
+                <div class="gold-showcase-container">
+                    <div class="gold-premium-card">
+                        <div class="gold-content">
+                            <h3>All-In-One Premium Development Suite</h3>
+                            <p>Get completely integrated modern business properties, landing pages, lightning-fast portfolios, and secure high-performance e-commerce catalog stores custom-tailored to rank on top platforms instantly.</p>
+                            <ul class="gold-features-list">
+                                <li><i class="fas fa-check-circle"></i> Corporate Networks</li>
+                                <li><i class="fas fa-check-circle"></i> E-commerce Stores</li>
+                                <li><i class="fas fa-check-circle"></i> Medical / Clinic Portals</li>
+                                <li><i class="fas fa-check-circle"></i> Gym & Fitness Suites</li>
+                                <li><i class="fas fa-check-circle"></i> Real Estate Systems</li>
+                                <li><i class="fas fa-check-circle"></i> Complete SEO Setup</li>
+                            </ul>
+                        </div>
+                        <div class="gold-action-box">
+                            <span class="price-tag">Premium Packaging Deployment From</span>
+                            <span class="main-price">₹4,999</span>
+                            <a href="services.html" class="btn-gold-glowing">
+                                <span>View Live Demo & All Prices</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
                     </div>
+                </div>
+            </section>
+
+            <section id="pricing" class="reveal">
+                <div class="section-header">
+                    <h2>Why Choose Us</h2>
+                    <p>Engineered to deliver peak operational security, fast rendering, and conversion efficiency.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-item glass-card">
+                        <div class="feat-icon-wrap"><i class="fas fa-bolt"></i></div>
+                        <div>
+                            <h4>Fast Delivery</h4>
+                            <p>Optimized integration workflows mean your asset deployment happens safely in record timelines.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item glass-card">
+                        <div class="feat-icon-wrap"><i class="fas fa-mobile-alt"></i></div>
+                        <div>
+                            <h4>Mobile Responsive</h4>
+                            <p>Adaptive grid rendering scales flawlessly across modern smartphone and tablet interfaces.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item glass-card">
+                        <div class="feat-icon-wrap"><i class="fas fa-search-dollar"></i></div>
+                        <div>
+                            <h4>SEO Friendly</h4>
+                            <p>Semantic markup structural validation yields enhanced organic structural index prioritization on Google.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item glass-card">
+                        <div class="feat-icon-wrap"><i class="fas fa-wand-magic-sparkles"></i></div>
+                        <div>
+                            <h4>Premium UI</h4>
+                            <p>High-end modern interfaces incorporating glassmorphic designs and custom functional styling.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item glass-card">
+                        <div class="feat-icon-wrap"><i class="fas fa-shield-halved"></i></div>
+                        <div>
+                            <h4>Secure Firebase Auth</h4>
+                            <p>Advanced security integrations ensure client data protection and safe identity management nodes.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item glass-card">
+                        <div class="feat-icon-wrap"><i class="fas fa-headset"></i></div>
+                        <div>
+                            <h4>After Launch Support</h4>
+                            <p>Continuous maintenance windows ensure high systems uptime and secure component version upgrades.</p>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <section id="faq" class="reveal">
@@ -1242,7 +1403,7 @@
                         <div class="social-row-flex">
                             <a href="https://wa.me/918087585398" class="social-circle-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
                             <a href="https://t.me/aswebsolutions" class="social-circle-link" target="_blank"><i class="fab fa-telegram-plane"></i></a>
-                            <a href="#" class="social-circle-link" id="insta-footer-node" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.instagram.com/" class="social-circle-link" id="insta-footer-node" target="_blank"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1296,16 +1457,16 @@
             }
         }, 8000);
 
-        const platformServices = [
-            { name: "Business Website", cost: "4,999", icon: "fa-briefcase", text: "Stunning presentation frameworks customized completely for local commerce monetization." },
-            { name: "Premium Corporate Website", cost: "14,999", icon: "fa-building-shield", text: "Corporate ecosystem portal integration designed to reflect organizational trust and authority metrics." },
-            { name: "Ecommerce Website", cost: "24,999", icon: "fa-basket-shopping", text: "Complete shopping automation engines loaded with transactional security routing layers." },
-            { name: "Restaurant Website", cost: "7,999", icon: "fa-utensils", text: "Visual inventory rendering blocks with modular reservation and menu structural management modules." },
-            { name: "Hospital / Clinic Website", cost: "9,999", icon: "fa-user-doctor", text: "Patient onboarding channels with appointment coordination engines built for high privacy tracking rules." },
-            { name: "Gym Website", cost: "5,999", icon: "fa-dumbbell", text: "Interactive conversion pages loaded with specific tier plans and trainer roster grids." },
-            { name: "Real Estate Website", cost: "14,999", icon: "fa-map-location-dot", text: "Advanced filtering directories for listing real properties optimized for fast indexing layouts." },
-            { name: "SEO Services", cost: "4,999", icon: "fa-chart-line", text: "Comprehensive keyword ranking operations built cleanly to out-index domain market peers systematically." },
-            { name: "Maintenance Package", cost: "999/month", icon: "fa-gears", text: "Continuous database pruning, payload performance profiling and security hotpatching options." }
+        const selectionArray = [
+            "Business Website Layout",
+            "Premium Corporate Portal",
+            "Ecommerce Automation Platform",
+            "Restaurant Showcase Board",
+            "Hospital / Clinic Onboarding Suite",
+            "Gym & Fitness Landing Module",
+            "Real Estate Property Listing Engine",
+            "Comprehensive SEO Campaign",
+            "Enterprise Security Maintenance Package"
         ];
 
         const standardFaqDataset = [
@@ -1347,28 +1508,12 @@
         }
 
         function executeLayoutGenerationRoutines() {
-            // Render Managed Services with custom See Live Demo Link Action
-            const srvGrid = document.getElementById("services-target-node");
-            if(srvGrid) {
-                srvGrid.innerHTML = platformServices.map(srv => `
-                    <div class="service-card glass-card">
-                        <div class="srv-icon"><i class="fas ${srv.icon}"></i></div>
-                        <h3>${srv.name}</h3>
-                        <p>${srv.text}</p>
-                        <div class="srv-price-row">
-                            <span class="srv-price">₹${srv.cost}</span>
-                            <a href="services.html" class="srv-btn">See Live Demo</a>
-                        </div>
-                    </div>
-                `).join('');
-            }
-
             const srvSelect = document.getElementById("form-client-srv");
             if(srvSelect) {
-                platformServices.forEach(srv => {
+                selectionArray.forEach(srvName => {
                     const el = document.createElement("option");
-                    el.value = srv.name;
-                    el.textContent = `${srv.name} — (Starting from ₹${srv.cost})`;
+                    el.value = srvName;
+                    el.textContent = srvName;
                     srvSelect.appendChild(el);
                 });
             }
@@ -1391,7 +1536,7 @@
 
         executeLayoutGenerationRoutines();
 
-        // Update Profile logic
+        // Update Profile processing loop
         document.getElementById("save-profile-btn").addEventListener("click", async () => {
             const user = auth.currentUser;
             if(!user) return;
@@ -1432,7 +1577,7 @@
             }
         });
 
-        // Dedicated Email Password Reset Option Engine Routine
+        // Password reset mechanism
         document.getElementById("send-reset-link-btn").addEventListener("click", async () => {
             const user = auth.currentUser;
             if(!user || !user.email) return;
@@ -1453,7 +1598,7 @@
             }
         });
 
-        // Signout Handler
+        // Signout configuration execution
         document.getElementById("action-logout-btn").addEventListener("click", async () => {
             try {
                 await signOut(auth);
@@ -1482,7 +1627,6 @@
         }
         window.triggerToastNotification = triggerToastNotification;
 
-        // Custom Menu Modular Accordion Action Block
         function toggleMenuAccordion(headerElement) {
             const targetItem = headerElement.parentElement;
             const menuPanel = document.getElementById("user-profile-panel");
@@ -1505,7 +1649,6 @@
             }
         }
 
-        // Close dropdown panel safely when outside boundary nodes are triggered
         document.addEventListener("click", (e) => {
             const panel = document.getElementById("user-profile-panel");
             const boxTrigger = document.querySelector(".profile-trigger");
@@ -1531,7 +1674,7 @@
             }
         }
 
-        // Environmental Filter Modulation
+        // Filtering Tuning Mechanics Node
         const sliderBright = document.getElementById("slider-brightness");
         const sliderContrast = document.getElementById("slider-contrast");
         const chkTheme = document.getElementById("theme-toggle-chk");
@@ -1572,7 +1715,7 @@
         }
         pullEnvironmentalCache();
 
-        // Customer Pipeline Submission Processing Gateway Module
+        // Pipeline Submit Module Processing
         document.getElementById("project-submission-node").addEventListener("submit", (e) => {
             e.preventDefault();
             const clientName = document.getElementById("form-client-name").value.trim();
@@ -1624,7 +1767,7 @@
             }
         });
 
-        // Clean Network Web Type Grid Particle Canvas Simulation
+        // Advanced Multi-Layer Interconnected Constellation Net Particle System
         const renderingCanvasElement = document.getElementById("particles-canvas");
         const contextRenderingRef = renderingCanvasElement.getContext("2d");
         let activeNodesArray = [];
@@ -1640,8 +1783,9 @@
             constructor() {
                 this.xPos = Math.random() * renderingCanvasElement.width;
                 this.yPos = Math.random() * renderingCanvasElement.height;
-                this.xSpeedVal = (Math.random() - 0.5) * 0.5;
-                this.ySpeedVal = (Math.random() - 0.5) * 0.5;
+                this.xSpeedVal = (Math.random() - 0.5) * 0.6;
+                this.ySpeedVal = (Math.random() - 0.5) * 0.6;
+                this.nodeRadius = Math.random() * 1.5 + 1;
             }
             computeVectorUpdates() {
                 this.xPos += this.xSpeedVal;
@@ -1653,7 +1797,7 @@
 
         function buildNetworkMatrixPool() {
             activeNodesArray = [];
-            const nodesCount = Math.min(Math.floor(window.innerWidth / 20), 60);
+            const nodesCount = Math.min(Math.floor(window.innerWidth / 15), 80);
             for (let i = 0; i < nodesCount; i++) {
                 activeNodesArray.push(new NetworkNodeInstance());
             }
@@ -1662,28 +1806,26 @@
         function frameExecutionEngineCycle() {
             contextRenderingRef.clearRect(0, 0, renderingCanvasElement.width, renderingCanvasElement.height);
             
-            // Step 1: Update Positions & Draw Nodes
             activeNodesArray.forEach(node => {
                 node.computeVectorUpdates();
                 contextRenderingRef.beginPath();
-                contextRenderingRef.arc(node.xPos, node.yPos, 2, 0, Math.PI * 2);
-                contextRenderingRef.fillStyle = "rgba(99, 102, 241, 0.25)";
+                contextRenderingRef.arc(node.xPos, node.yPos, node.nodeRadius, 0, Math.PI * 2);
+                contextRenderingRef.fillStyle = "rgba(168, 85, 247, 0.3)";
                 contextRenderingRef.fill();
             });
 
-            // Step 2: Draw Interconnected Structural Web Lines
             for (let i = 0; i < activeNodesArray.length; i++) {
                 for (let j = i + 1; j < activeNodesArray.length; j++) {
                     const dx = activeNodesArray[i].xPos - activeNodesArray[j].xPos;
                     const dy = activeNodesArray[i].yPos - activeNodesArray[j].yPos;
                     const distance = Math.sqrt(dx * dx + dy * dy);
 
-                    if (distance < 150) {
+                    if (distance < 160) {
                         contextRenderingRef.beginPath();
                         contextRenderingRef.moveTo(activeNodesArray[i].xPos, activeNodesArray[i].yPos);
                         contextRenderingRef.lineTo(activeNodesArray[j].xPos, activeNodesArray[j].yPos);
-                        contextRenderingRef.strokeStyle = `rgba(168, 85, 247, ${0.12 * (1 - distance / 150)})`;
-                        contextRenderingRef.lineWidth = 1;
+                        contextRenderingRef.strokeStyle = `rgba(99, 102, 241, ${0.15 * (1 - distance / 160)})`;
+                        contextRenderingRef.lineWidth = 0.8;
                         contextRenderingRef.stroke();
                     }
                 }
