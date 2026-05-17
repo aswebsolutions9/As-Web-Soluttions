@@ -470,6 +470,35 @@
             transform: translateY(0);
         }
 
+        /* Back Action Control Header Wrapper */
+        .back-nav-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .btn-back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 10px 20px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--glass-border);
+            transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-back-link:hover {
+            background: var(--gradient);
+            border-color: transparent;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+            transform: translateX(-4px);
+        }
+
         .section-header {
             text-align: center;
             margin-bottom: 50px;
@@ -481,7 +510,6 @@
             margin-bottom: 15px;
         }
 
-        /* Glowing Text Effect matching Home page */
         .section-header h1 span {
             background: linear-gradient(to right, #6366f1, #a855f7, #6366f1);
             background-size: 200% auto;
@@ -491,6 +519,9 @@
             text-shadow: 0 0 30px rgba(168, 85, 247, 0.2);
         }
 
+        @webkit-keyframes shineText {
+            to { background-position: 200% center; }
+        }
         @keyframes shineText {
             to { background-position: 200% center; }
         }
@@ -502,7 +533,7 @@
             margin: 0 auto;
         }
 
-        /* Master Grid Splitter */
+        /* Master Grid Splitter Layout */
         .contact-grid-wrapper {
             display: grid;
             grid-template-columns: 0.8fr 1.2fr;
@@ -572,9 +603,17 @@
             color: var(--text-muted);
         }
 
-        /* Advanced Dynamic Customization Contact Form */
+        /* Animated Dynamic Customization Contact Form */
         .contact-form-container {
             padding: 45px;
+            position: relative;
+            overflow: hidden;
+            animation: formFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes formFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .inquiry-master-form {
@@ -591,12 +630,14 @@
             display: flex;
             flex-direction: column;
             gap: 8px;
+            position: relative;
         }
 
         .input-block-node label {
             font-size: 0.85rem;
             font-weight: 600;
             color: var(--text-muted);
+            transition: color 0.3s;
         }
 
         .input-block-node input,
@@ -610,7 +651,7 @@
             color: var(--text-color);
             font-size: 0.95rem;
             outline: none;
-            transition: border-color 0.3s, background 0.3s;
+            transition: border-color 0.3s, background 0.3s, transform 0.3s;
         }
 
         .input-block-node input:focus,
@@ -618,69 +659,17 @@
         .input-block-node textarea:focus {
             border-color: var(--primary);
             background: rgba(0, 0, 0, 0.25);
+            transform: translateY(-2px);
+        }
+
+        .input-block-node input:focus + label {
+            color: var(--primary);
         }
 
         .input-block-node textarea {
             resize: vertical;
             min-height: 120px;
         }
-
-        /* Channel Selector Grid Blocks */
-        .gateway-selector-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-top: 5px;
-        }
-
-        .gateway-radio-card {
-            position: relative;
-        }
-
-        .gateway-radio-card input[type="radio"] {
-            position: absolute;
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .gateway-label-facade {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 16px;
-            border-radius: 12px;
-            border: 1px solid var(--glass-border);
-            background: rgba(255, 255, 255, 0.02);
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 0.85rem;
-            transition: 0.3s ease;
-            text-align: center;
-        }
-
-        .gateway-label-facade i {
-            font-size: 1.4rem;
-            transition: transform 0.3s;
-        }
-
-        .gateway-radio-card input[type="radio"]:checked + .gateway-label-facade {
-            border-color: var(--primary);
-            background: rgba(99, 102, 241, 0.1);
-            box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
-            color: #fff;
-        }
-
-        .gateway-radio-card input[type="radio"]:checked + .gateway-label-facade i {
-            transform: scale(1.1);
-        }
-
-        /* Specific Brand Color Accents on facade click states */
-        .gateway-radio-card input[type="radio"]:checked + .facade-wa { border-color: #25d366; background: rgba(37, 211, 102, 0.08); }
-        .gateway-radio-card input[type="radio"]:checked + .facade-tg { border-color: #0088cc; background: rgba(0, 136, 204, 0.08); }
-        .gateway-radio-card input[type="radio"]:checked + .facade-ig { border-color: #e1306c; background: rgba(225, 48, 108, 0.08); }
 
         .btn-submit-action {
             width: 100%;
@@ -802,10 +791,10 @@
             gap: 15px;
         }
 
-        /* Custom Global Toast System */
+        /* Top-Right Notification Stream System Stack Container */
         #toast-container {
             position: fixed;
-            bottom: 30px;
+            top: 30px;
             right: 30px;
             z-index: 10000;
             display: flex;
@@ -830,18 +819,20 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            animation: toastIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            min-width: 300px;
+            max-width: 450px;
+            animation: toastTopIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
         }
 
         .toast-notification.success { border-left-color: #10b981; }
         .toast-notification.error { border-left-color: #ef4444; }
 
-        @keyframes toastIn {
-            from { opacity: 0; transform: translateY(20px) scale(0.9); }
+        @keyframes toastTopIn {
+            from { opacity: 0; transform: translateY(-20px) scale(0.9); }
             to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
-        /* Responsive UI Processing Node Overrides */
+        /* Responsive Breakpoints Engineering Nodes */
         @media (max-width: 992px) {
             .contact-grid-wrapper {
                 grid-template-columns: 1fr;
@@ -875,10 +866,11 @@
             .section-header h1 { font-size: 2.2rem; }
             .inquiry-master-form { grid-template-columns: 1fr; }
             .form-full-span { grid-column: span 1; }
-            .gateway-selector-grid { grid-template-columns: 1fr; }
             .contact-form-container { padding: 25px; }
             .profile-panel { width: 90%; right: 5%; left: 5%; }
             .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+            #toast-container { top: 20px; right: 5%; left: 5%; width: 90%; }
+            .toast-notification { min-width: auto; width: 100%; }
         }
     </style>
 </head>
@@ -991,22 +983,29 @@
             </div>
 
             <section class="reveal">
+                <div class="back-nav-container">
+                    <a href="home.html" class="btn-back-link">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Back to Dashboard</span>
+                    </a>
+                </div>
+
                 <div class="section-header">
                     <h1>Connect to <span>AS Web Solutions</span></h1>
-                    <p>Deploy your operational specification definitions directly to our technical architecture channels through your chosen pipeline.</p>
+                    <p>Deploy your project requirements framework matrix directly to our engineering workspace via instant WhatsApp coordination.</p>
                 </div>
 
                 <div class="contact-grid-wrapper">
                     <div class="info-panel-box glass-card">
                         <div class="info-title-block">
                             <h3>Project Hub Information</h3>
-                            <p>Direct synchronization vectors to map requirements directly into verified asset mockups.</p>
+                            <p>Direct communication parameters to integrate custom modules smoothly inside modern builds.</p>
                         </div>
 
                         <div class="info-channel-card">
                             <div class="channel-icon-wrap"><i class="fab fa-whatsapp"></i></div>
                             <div class="channel-detail-text">
-                                <h4>Official WhatsApp Support</h4>
+                                <h4>Official WhatsApp Channel</h4>
                                 <p>+91 80875 85398</p>
                             </div>
                         </div>
@@ -1014,7 +1013,7 @@
                         <div class="info-channel-card">
                             <div class="channel-icon-wrap"><i class="fab fa-telegram-plane"></i></div>
                             <div class="channel-detail-text">
-                                <h4>Telegram Community Channel</h4>
+                                <h4>Telegram Community Gateway</h4>
                                 <p>@aswebsolutions</p>
                             </div>
                         </div>
@@ -1022,7 +1021,7 @@
                         <div class="info-channel-card">
                             <div class="channel-icon-wrap"><i class="fab fa-instagram"></i></div>
                             <div class="channel-detail-text">
-                                <h4>Instagram Corporate Page</h4>
+                                <h4>Instagram Brand Interface</h4>
                                 <p>AS Web Solutions Hub</p>
                             </div>
                         </div>
@@ -1036,71 +1035,51 @@
                             </div>
                             <div class="input-block-node">
                                 <label for="node-phone">Phone Number *</label>
-                                <input type="tel" id="node-phone" required placeholder="+91 00000 00000">
+                                <input type="tel" id="node-phone" required placeholder="10-Digit Mobile No.">
                             </div>
+                            
                             <div class="input-block-node form-full-span">
-                                <label for="node-biz">Business / Brand Name</label>
-                                <input type="text" id="node-biz" placeholder="Enterprise Name (Optional)">
+                                <label for="node-biz">Your Business Name / Title</label>
+                                <input type="text" id="node-biz" placeholder="Enter your business or brand title">
                             </div>
 
-                            <div class="input-block-node">
-                                <label for="node-srv">Target Architecture Layout *</label>
+                            <div class="input-block-node form-full-span">
+                                <label for="node-srv">Target Website Layout Selection *</label>
                                 <select id="node-srv" required>
-                                    <option value="" disabled selected>Select Website Category</option>
+                                    <option value="" disabled selected>Choose an asset framework type</option>
                                 </select>
                             </div>
+                            
                             <div class="input-block-node">
-                                <label for="node-delivery">Required Delivery Window *</label>
+                                <label for="node-delivery">Required Delivery Timeline *</label>
                                 <select id="node-delivery" required>
-                                    <option value="" disabled selected>Select Timeline Scope</option>
-                                    <option value="Urgent (3-5 Operating Windows)">Urgent (3-5 Operating Windows)</option>
-                                    <option value="Standard (7-12 Production Cycles)">Standard (7-12 Production Cycles)</option>
-                                    <option value="Flexible Framework Development">Flexible Framework Development</option>
+                                    <option value="" disabled selected>Select production scope</option>
+                                    <option value="Urgent Deployment (3-5 Days)">Urgent Deployment (3-5 Days)</option>
+                                    <option value="Standard Launch (7-12 Days)">Standard Launch (7-12 Days)</option>
+                                    <option value="Flexible Structural Scope">Flexible Structural Scope</option>
                                 </select>
                             </div>
-                            <div class="input-block-node form-full-span">
-                                <label for="node-budget">Budget Framework Allocation Matrix *</label>
-                                <select id="node-budget" required>
-                                    <option value="" disabled selected>Select Estimated Budget Frame</option>
-                                    <option value="Basic Tier Framework (₹4,999 - ₹7,999)">Basic Tier Framework (₹4,999 - ₹7,999)</option>
-                                    <option value="Mid-Range Business Setup (₹8,000 - ₹14,999)">Mid-Range Business Setup (₹8,000 - ₹14,999)</option>
-                                    <option value="Advanced Enterprise Storefront (₹15,000 - ₹24,999+)">Advanced Enterprise Storefront (₹15,000 - ₹24,999+)</option>
+                            
+                            <div class="input-block-node">
+                                <label for="node-budget-frame">Allocated Budget Framework *</label>
+                                <select id="node-budget-frame" required>
+                                    <option value="" disabled selected>Select range matrix tier</option>
+                                    <option value="Starter Tier Framework (₹4,999 - ₹7,999)">Starter Tier Framework (₹4,999 - ₹7,999)</option>
+                                    <option value="Corporate Professional Setup (₹8,000 - ₹14,999)">Corporate Professional Setup (₹8,000 - ₹14,999)</option>
+                                    <option value="Enterprise Commerce Storefront (₹15,000 - ₹24,999+)">Enterprise Commerce Storefront (₹15,000 - ₹24,999+)</option>
                                 </select>
                             </div>
+                            
                             <div class="input-block-node form-full-span">
-                                <label for="node-msg">Core Functional Requirements & Goals</label>
-                                <textarea id="node-msg" placeholder="Detail specific modules, target audiences, integrations, reference configurations, etc..."></textarea>
-                            </div>
-
-                            <div class="input-block-node form-full-span">
-                                <label>Target Communication Submission Channel *</label>
-                                <div class="gateway-selector-grid">
-                                    <div class="gateway-radio-card">
-                                        <input type="radio" name="submissionChannel" id="channel-wa" value="WhatsApp" checked>
-                                        <label for="channel-wa" class="gateway-label-facade facade-wa">
-                                            <i class="fab fa-whatsapp" style="color:#25d366;"></i>
-                                            <span>WhatsApp</span>
-                                        </label>
-                                    </div>
-                                    <div class="gateway-radio-card">
-                                        <input type="radio" name="submissionChannel" id="channel-tg" value="Telegram">
-                                        <label for="channel-tg" class="gateway-label-facade facade-tg">
-                                            <i class="fab fa-telegram-plane" style="color:#0088cc;"></i>
-                                            <span>Telegram</span>
-                                        </label>
-                                    </div>
-                                    <div class="gateway-radio-card">
-                                        <input type="radio" name="submissionChannel" id="channel-ig" value="Instagram">
-                                        <label for="channel-ig" class="gateway-label-facade facade-ig">
-                                            <i class="fab fa-instagram" style="color:#e1306c;"></i>
-                                            <span>Instagram</span>
-                                        </label>
-                                    </div>
-                                </div>
+                                <label for="node-msg">Core Architectural Requirements & Goals</label>
+                                <textarea id="node-msg" placeholder="Describe layout targets, customized module additions, operational ideas..."></textarea>
                             </div>
 
                             <div class="form-full-span" style="margin-top:10px;">
-                                <button type="submit" class="btn-submit-action">Dispatched Secure Data Payload <i class="fas fa-paper-plane"></i></button>
+                                <button type="submit" class="btn-submit-action">
+                                    <span>Submit Inquiry to WhatsApp</span>
+                                    <i class="fab fa-whatsapp"></i>
+                                </button>
                             </div>
                         </form>
                     </div>
@@ -1180,16 +1159,31 @@
             }
         }, 8000);
 
+        // Mapped Functional Scope Pricing Configuration Arrays
         const selectionArray = [
-            "Business Website Layout",
-            "Premium Corporate Portal",
-            "Ecommerce Automation Platform",
-            "Restaurant Showcase Board",
-            "Hospital / Clinic Onboarding Suite",
-            "Gym & Fitness Landing Module",
-            "Real Estate Property Listing Engine",
-            "Comprehensive SEO Campaign",
-            "Enterprise Security Maintenance Package"
+            "Business Website — ₹4,999",
+            "Premium Corporate Website — ₹14,999",
+            "Ecommerce Website — ₹24,999",
+            "Restaurant Website — ₹7,999",
+            "Hospital / Clinic Website — ₹9,999",
+            "Dental Clinic Website — ₹8,899",
+            "Gym Website — ₹5,999",
+            "Salon / Spa Website — ₹5,999",
+            "School / College Website — ₹12,999",
+            "Coaching Class Website — ₹6,999",
+            "Hotel / Resort Website — ₹12,999",
+            "Real Estate Website — ₹14,999",
+            "Transport Website — ₹8,999",
+            "Travel & Tourism Website — ₹9,999",
+            "Event Management Website — ₹8,999",
+            "Automobile Website — ₹9,999",
+            "Agriculture Website — ₹7,999",
+            "Jewellery Website — ₹12,999",
+            "Gaming Zone Website — ₹8,999",
+            "Medical Store Website — ₹7,999",
+            "Clothing / Fashion Website — ₹9,999",
+            "SEO Services — ₹4,999",
+            "Website Maintenance — ₹999/month"
         ];
 
         onAuthStateChanged(auth, (user) => {
@@ -1232,7 +1226,7 @@
         }
         populateFormSelectDropdownOptions();
 
-        // Account Profile Update Engine
+        // Update Profile processing loop
         document.getElementById("save-profile-btn").addEventListener("click", async () => {
             const user = auth.currentUser;
             if(!user) return;
@@ -1294,7 +1288,7 @@
             }
         });
 
-        // Terminate Account Interface Session
+        // Signout configuration execution
         document.getElementById("action-logout-btn").addEventListener("click", async () => {
             try {
                 await signOut(auth);
@@ -1306,6 +1300,7 @@
     </script>
 
     <script>
+        // Top-Right Focused Toast Notification Injection Node Functionality
         function triggerToastNotification(message, statusType = "success") {
             const tray = document.getElementById("toast-container");
             if(!tray) return;
@@ -1317,8 +1312,8 @@
             
             tray.appendChild(element);
             setTimeout(() => {
-                element.style.animation = "toastIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) reverse forwards";
-                setTimeout(() => element.remove(), 300);
+                element.style.animation = "toastTopIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) reverse forwards";
+                setTimeout(() => element.remove(), 400);
             }, 5000);
         }
         window.triggerToastNotification = triggerToastNotification;
@@ -1362,7 +1357,7 @@
             }
         }
 
-        // Custom Visual Filter Synchronizations Logic
+        // Tuning Mechanics Logic node
         const sliderBright = document.getElementById("slider-brightness");
         const sliderContrast = document.getElementById("slider-contrast");
         const chkTheme = document.getElementById("theme-toggle-chk");
@@ -1403,53 +1398,38 @@
         }
         pullEnvironmentalCache();
 
-        // Customer Pipeline Processing Multi-Route Gateway Module
+        // Dedicated Direct WhatsApp Submission Processing Form Pipeline Module
         document.getElementById("master-gateway-form").addEventListener("submit", (e) => {
             e.preventDefault();
+            const clientName = document.getElementById("node-name").value.trim();
+            const clientPhone = document.getElementById("node-phone").value.trim();
+            const clientBizName = document.getElementById("node-biz").value.trim() || "Not Disclosed / Self-Owned";
+            const selectedLayout = document.getElementById("node-srv").value;
+            const deliveryTime = document.getElementById("node-delivery").value;
+            const projectBudget = document.getElementById("node-budget-frame").value;
+            const messageDetails = document.getElementById("node-msg").value.trim() || "No extra system parameters defined.";
 
-            const cName = document.getElementById("node-name").value.trim();
-            const cPhone = document.getElementById("node-phone").value.trim();
-            const cBiz = document.getElementById("node-biz").value.trim() || "Not Disclosed";
-            const cSrv = document.getElementById("node-srv").value;
-            const cDelivery = document.getElementById("node-delivery").value;
-            const cBudget = document.getElementById("node-budget").value;
-            const cMsg = document.getElementById("node-msg").value.trim() || "No additional criteria provided.";
-
-            if (cPhone.length < 10) {
-                triggerToastNotification("Please configure a valid numerical phone data length.", "error");
+            if (clientPhone.length < 10) {
+                triggerToastNotification("Please enter a valid 10-digit mobile number.", "error");
                 return;
             }
 
-            // Detect target channel radio click value state
-            const targetChannel = document.querySelector('input[name="submissionChannel"]:checked').value;
-
-            // Generate beautifully structured data message box layout
-            const baselineRawMessage = 
-                `*MASTER PROJECT PIPELINE REQUIREMENT INQUIRY*%0A` +
+            // Interpolation Text formatting matrix layout for clean WhatsApp presentation
+            const formattedPayloadString = 
+                `*NEW INQUIRY FROM AS WEB SOLUTIONS*%0A` +
                 `----------------------------------------%0A` +
-                `• *Client Name:* ${encodeURIComponent(cName)}%0A` +
-                `• *Phone Vector:* ${encodeURIComponent(cPhone)}%0A` +
-                `• *Brand Entity:* ${encodeURIComponent(cBiz)}%0A` +
-                `• *Architecture Style:* ${encodeURIComponent(cSrv)}%0A` +
-                `• *Delivery Scope:* ${encodeURIComponent(cDelivery)}%0A` +
-                `• *Budget Matrix:* ${encodeURIComponent(cBudget)}%0A` +
-                `• *Functional Profile:* ${encodeURIComponent(cMsg)}%0A` +
+                `• *Client Name:* ${encodeURIComponent(clientName)}%0A` +
+                `• *Mobile Number:* ${encodeURIComponent(clientPhone)}%0A` +
+                `• *Business/Brand Title:* ${encodeURIComponent(clientBizName)}%0A` +
+                `• *Selected Package:* ${encodeURIComponent(selectedLayout)}%0A` +
+                `• *Delivery Timeline:* ${encodeURIComponent(deliveryTime)}%0A` +
+                `• *Allocated Budget:* ${encodeURIComponent(projectBudget)}%0A` +
+                `• *Requirements details:* ${encodeURIComponent(messageDetails)}%0A` +
                 `----------------------------------------%0A` +
-                `Routed dynamically via Custom Contact Gateway Node.`;
+                `Dispatched from Contact Hub Interface.`;
 
-            // Route execution based on selected communication gate channel
-            if (targetChannel === "WhatsApp") {
-                window.open(`https://wa.me/918087585398?text=${baselineRawMessage}`, '_blank');
-                triggerToastNotification("Data package dispatched to active WhatsApp line.", "success");
-            } else if (targetChannel === "Telegram") {
-                // Configured with # template placeholder link for subsequent identity insertion
-                window.open(`https://t.me/aswebsolutions`, '_blank'); 
-                triggerToastNotification("Opening corporate Telegram channel connection gateway...", "success");
-            } else if (targetChannel === "Instagram") {
-                // Configured with # template placeholder link for subsequent identity insertion
-                window.open(`https://www.instagram.com/`, '_blank');
-                triggerToastNotification("Redirecting parameters layout to Instagram page hub...", "success");
-            }
+            window.open(`https://wa.me/918087585398?text=${formattedPayloadString}`, '_blank');
+            triggerToastNotification("Project initialization string data routed to WhatsApp gateway.", "success");
         });
 
         function handleScrollRevealCalculation() {
@@ -1473,7 +1453,7 @@
             }
         });
 
-        // Advanced Multi-Layer Interconnected Constellation Net Particle System Matrix
+        // Advanced Web-Type Interconnected Dynamic Constellation Particle Simulation Canvas
         const renderingCanvasElement = document.getElementById("particles-canvas");
         const contextRenderingRef = renderingCanvasElement.getContext("2d");
         let activeNodesArray = [];
