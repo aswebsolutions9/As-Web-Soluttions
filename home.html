@@ -636,7 +636,7 @@
             50% { transform: translateY(-10px); }
         }
 
-        /* Services Grid Layout Container */
+        /* Services Layout Container */
         .section-header {
             text-align: center;
             margin-bottom: 60px;
@@ -1030,10 +1030,10 @@
             gap: 15px;
         }
 
-        /* Custom Global Toast System */
+        /* Core Fix: Top-Right Stacked Notification Stream System Container Layout */
         #toast-container {
             position: fixed;
-            bottom: 30px;
+            top: 30px;
             right: 30px;
             z-index: 10000;
             display: flex;
@@ -1058,14 +1058,16 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            animation: toastIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            min-width: 300px;
+            max-width: 450px;
+            animation: toastTopIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
         }
 
         .toast-notification.success { border-left-color: #10b981; }
         .toast-notification.error { border-left-color: #ef4444; }
 
-        @keyframes toastIn {
-            from { opacity: 0; transform: translateY(20px) scale(0.9); }
+        @keyframes toastTopIn {
+            from { opacity: 0; transform: translateY(-20px) scale(0.9); }
             to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
@@ -1117,6 +1119,8 @@
             .form-max-wrap { padding: 24px; }
             .footer-grid { grid-template-columns: 1fr; gap: 30px; }
             .profile-panel { width: 90%; right: 5%; left: 5%; }
+            #toast-container { top: 20px; right: 5%; left: 5%; width: 90%; }
+            .toast-notification { min-width: auto; width: 100%; }
         }
     </style>
 </head>
@@ -1403,7 +1407,7 @@
                         <div class="social-row-flex">
                             <a href="https://wa.me/918087585398" class="social-circle-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
                             <a href="https://t.me/aswebsolutions" class="social-circle-link" target="_blank"><i class="fab fa-telegram-plane"></i></a>
-                            <a href="https://www.instagram.com/" class="social-circle-link" id="insta-footer-node" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-circle-link" id="insta-footer-node" target="_blank"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
@@ -1610,6 +1614,7 @@
     </script>
 
     <script>
+        // Core Fix: Top-Right Stacked Animated Notification Injection Handler System
         function triggerToastNotification(message, statusType = "success") {
             const tray = document.getElementById("toast-container");
             if(!tray) return;
@@ -1621,8 +1626,8 @@
             
             tray.appendChild(element);
             setTimeout(() => {
-                element.style.animation = "toastIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) reverse forwards";
-                setTimeout(() => element.remove(), 300);
+                element.style.animation = "toastTopIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) reverse forwards";
+                setTimeout(() => element.remove(), 400);
             }, 5000);
         }
         window.triggerToastNotification = triggerToastNotification;
@@ -1674,7 +1679,7 @@
             }
         }
 
-        // Filtering Tuning Mechanics Node
+        // Environmental Filter Modulation
         const sliderBright = document.getElementById("slider-brightness");
         const sliderContrast = document.getElementById("slider-contrast");
         const chkTheme = document.getElementById("theme-toggle-chk");
@@ -1715,7 +1720,7 @@
         }
         pullEnvironmentalCache();
 
-        // Pipeline Submit Module Processing
+        // Customer Pipeline Submission Processing Gateway Module
         document.getElementById("project-submission-node").addEventListener("submit", (e) => {
             e.preventDefault();
             const clientName = document.getElementById("form-client-name").value.trim();
@@ -1767,7 +1772,7 @@
             }
         });
 
-        // Advanced Multi-Layer Interconnected Constellation Net Particle System
+        // Advanced Multi-Layer Interconnected Constellation Net Particle System Layout
         const renderingCanvasElement = document.getElementById("particles-canvas");
         const contextRenderingRef = renderingCanvasElement.getContext("2d");
         let activeNodesArray = [];
