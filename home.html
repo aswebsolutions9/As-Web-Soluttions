@@ -1592,7 +1592,7 @@
 
             try {
                 await sendPasswordResetEmail(auth, user.email);
-                window.triggerToastNotification("Email var spam folder check kara tithe tumchi pass reset link aahe", "success");
+                window.triggerToastNotification("Password reset email sent. Please check your inbox or spam folder.", "success");
             } catch(error) {
                 console.error(error);
                 window.triggerToastNotification("Failed to send verification transmission packet.", "error");
