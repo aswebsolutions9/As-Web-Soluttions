@@ -24,7 +24,7 @@
             --glass-panel: rgba(30, 41, 59, 0.7);
             --card-hover: rgba(255, 255, 255, 0.03);
             --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-            
+
             /* Golden Matrix Premium Design Variables */
             --gold-grad: linear-gradient(135deg, #ffe066 0%, #f59e0b 50%, #b45309 100%);
             --gold-glow: rgba(245, 158, 11, 0.3);
@@ -1030,7 +1030,7 @@
             gap: 15px;
         }
 
-        /* Notification Stream System Container Layout */
+        /* Core Fix: Top-Right Stacked Notification Stream System Container Layout */
         #toast-container {
             position: fixed;
             top: 30px;
@@ -1082,8 +1082,14 @@
             .hero-badge { margin: 0 auto 20px auto; }
             .hero-btns { justify-content: center; }
             .hero-right { display: none; }
-            .gold-premium-card { grid-template-columns: 1fr; padding: 35px; text-align: center; }
-            .gold-features-list { justify-content: center; }
+            .gold-premium-card {
+                grid-template-columns: 1fr;
+                padding: 35px;
+                text-align: center;
+            }
+            .gold-features-list {
+                justify-content: center;
+            }
             .footer-grid { grid-template-columns: 1fr 1fr; }
         }
 
@@ -1102,7 +1108,9 @@
                 border-bottom: 1px solid var(--glass-border);
                 text-align: center;
             }
-            .nav-links.mobile-open { display: flex; }
+            .nav-links.mobile-open {
+                display: flex;
+            }
             .hamburger { display: block; }
             .hero-title { font-size: 2.6rem; }
             .gold-features-list { grid-template-columns: 1fr; }
@@ -1126,6 +1134,7 @@
     <div class="adjustable-wrap" id="global-filter-wrap">
         <canvas id="particles-canvas"></canvas>
         <div class="cursor-glow" id="mouse-glow"></div>
+
         <div id="toast-container"></div>
 
         <div class="app-container">
@@ -1219,6 +1228,7 @@
                         </div>
                     </div>
                 </div>
+
                 <button class="panel-btn btn-logout" id="action-logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
             </div>
 
@@ -1226,73 +1236,104 @@
                 <div class="hero-left reveal">
                     <span class="hero-badge">Premium Website Development Agency</span>
                     <h1 class="hero-title">We Build <span>Premium Websites</span> For Modern Businesses</h1>
-                    <p class="hero-text">We craft high-performance digital architectures with modern UI/UX workflows to scale operations globally.</p>
+                    <p class="hero-text">AS Web Solutions helps businesses grow online with modern websites, e-commerce stores, SEO setup and professional digital presence.</p>
                     <div class="hero-btns">
-                        <a href="#contact" class="btn-main btn-fill">Get Started <i class="fas fa-arrow-right"></i></a>
-                        <a href="#services" class="btn-main btn-outline">Explore Solutions</a>
+                        <a href="services.html" class="btn-main btn-fill">Explore Services <i class="fas fa-arrow-right"></i></a>
+                        <a href="https://wa.me/918087585398" class="btn-main btn-outline" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Inquiry</a>
                     </div>
                 </div>
                 <div class="hero-right reveal">
+                    <div class="hero-glow-blob"></div>
                     <div class="hero-img-card">
                         <div class="hero-img-inner">
-                            <i class="fas fa-cubes"></i>
-                            <h3 style="font-weight: 700; font-size: 1.3rem; margin-bottom: 8px;">Next-Gen Web Core</h3>
-                            <p style="font-size: 0.9rem; color: var(--text-muted);">Fully reactive layout built on matrix-mesh technology stack.</p>
+                            <i class="fas fa-layer-group"></i>
+                            <h3 style="font-weight:800; font-size:1.4rem; letter-spacing:0.5px; margin-bottom:4px;">AS Web Solutions</h3>
+                            <p style="color:#a855f7; font-weight:700; font-size:0.85rem; text-transform:uppercase; letter-spacing:2px;">Next-Gen Architecture</p>
                         </div>
-                        <div class="floating-badge-node fb-1">
-                            <i class="fas fa-bolt" style="color: #eab308;"></i> <span>Ultra Fast Performance</span>
-                        </div>
-                        <div class="floating-badge-node fb-2">
-                            <i class="fas fa-shield-halved" style="color: #22c55e;"></i> <span>Bank-Grade Security</span>
-                        </div>
+                        <div class="floating-badge-node fb-1"><i class="fas fa-bolt" style="color:#f59e0b;"></i> Fast Response</div>
+                        <div class="floating-badge-node fb-2"><i class="fas fa-shield-halved" style="color:#10b981;"></i> Cloud Secure</div>
                     </div>
                 </div>
             </section>
 
             <section id="services" class="reveal">
                 <div class="section-header">
-                    <h2>Exclusive Premium Packages</h2>
-                    <p class="hero-text" style="margin: 0 auto 40px auto;">Deploy high-converting business applications tailored explicitly for aggressive commercial scale.</p>
+                    <h2>Our Premium Services</h2>
+                    <p>High-end digital solutions explicitly constructed to transform digital brand assets and scale processing operations.</p>
                 </div>
+                
                 <div class="gold-showcase-container">
                     <div class="gold-premium-card">
                         <div class="gold-content">
-                            <h3>Enterprise Custom Solution</h3>
-                            <p>End-to-end engineered software solution integrated with real-time analytics dashboards, automated continuous integration deployments, and scalable network matrices.</p>
+                            <h3>All-In-One Premium Development Suite</h3>
+                            <p>Get completely integrated modern business properties, landing pages, lightning-fast portfolios, and secure high-performance e-commerce catalog stores custom-tailored to rank on top platforms instantly.</p>
                             <ul class="gold-features-list">
-                                <li><i class="fas fa-check-circle"></i> Complete Custom Layouts</li>
-                                <li><i class="fas fa-check-circle"></i> AI Engine Core Connectivity</li>
-                                <li><i class="fas fa-check-circle"></i> Persistent Cloud Systems</li>
-                                <li><i class="fas fa-check-circle"></i> Dedicated Developer Support</li>
+                                <li><i class="fas fa-check-circle"></i> Corporate Networks</li>
+                                <li><i class="fas fa-check-circle"></i> E-commerce Stores</li>
+                                <li><i class="fas fa-check-circle"></i> Medical / Clinic Portals</li>
+                                <li><i class="fas fa-check-circle"></i> Gym & Fitness Suites</li>
+                                <li><i class="fas fa-check-circle"></i> Real Estate Systems</li>
+                                <li><i class="fas fa-check-circle"></i> Complete SEO Setup</li>
                             </ul>
                         </div>
                         <div class="gold-action-box">
-                            <span class="price-tag">Starting Investment</span>
-                            <span class="main-price">Premium Plan</span>
-                            <a href="#contact" class="btn-gold-glowing">Initiate Order Protocol <i class="fas fa-bolt"></i></a>
+                            <span class="price-tag">Premium Packaging Deployment From</span>
+                            <span class="main-price">₹4,999</span>
+                            <a href="services.html" class="btn-gold-glowing">
+                                <span>View Live Demo & All Prices</span>
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section id="features" class="reveal">
+            <section id="pricing" class="reveal">
                 <div class="section-header">
-                    <h2>Why Strategic Brands Partner With Us</h2>
-                    <p class="hero-text" style="margin: 0 auto 40px auto;">We clear out engineering constraints to implement crisp user interfaces optimized for high engagement.</p>
+                    <h2>Why Choose Us</h2>
+                    <p>Engineered to deliver peak operational security, fast rendering, and conversion efficiency.</p>
                 </div>
                 <div class="features-grid">
                     <div class="feature-item glass-card">
-                        <div class="feat-icon-wrap"><i class="fas fa-wand-magic-sparkles"></i></div>
+                        <div class="feat-icon-wrap"><i class="fas fa-bolt"></i></div>
                         <div>
-                            <h4>Tailored Dynamic Aesthetics</h4>
-                            <p>No generic components. Every layout is strictly engineered from deep asset logic setups for complete brand alignments.</p>
+                            <h4>Fast Delivery</h4>
+                            <p>Optimized integration workflows mean your asset deployment happens safely in record timelines.</p>
                         </div>
                     </div>
                     <div class="feature-item glass-card">
-                        <div class="feat-icon-wrap"><i class="fas fa-layer-group"></i></div>
+                        <div class="feat-icon-wrap"><i class="fas fa-mobile-alt"></i></div>
                         <div>
-                            <h4>Fluid Component Modularity</h4>
-                            <p>Clean structure arrangements allow flexible expansion steps as requirements expand over time.</p>
+                            <h4>Mobile Responsive</h4>
+                            <p>Adaptive grid rendering scales flawlessly across modern smartphone and tablet interfaces.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item glass-card">
+                        <div class="feat-icon-wrap"><i class="fas fa-search-dollar"></i></div>
+                        <div>
+                            <h4>SEO Friendly</h4>
+                            <p>Semantic markup structural validation yields enhanced organic structural index prioritization on Google.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item glass-card">
+                        <div class="feat-icon-wrap"><i class="fas fa-wand-magic-sparkles"></i></div>
+                        <div>
+                            <h4>Premium UI</h4>
+                            <p>High-end modern interfaces incorporating glassmorphic designs and custom functional styling.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item glass-card">
+                        <div class="feat-icon-wrap"><i class="fas fa-shield-halved"></i></div>
+                        <div>
+                            <h4>Secure Firebase Auth</h4>
+                            <p>Advanced security integrations ensure client data protection and safe identity management nodes.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item glass-card">
+                        <div class="feat-icon-wrap"><i class="fas fa-headset"></i></div>
+                        <div>
+                            <h4>After Launch Support</h4>
+                            <p>Continuous maintenance windows ensure high systems uptime and secure component version upgrades.</p>
                         </div>
                     </div>
                 </div>
@@ -1301,58 +1342,48 @@
             <section id="faq" class="reveal">
                 <div class="section-header">
                     <h2>Frequently Asked Questions</h2>
-                    <p class="hero-text" style="margin: 0 auto 40px auto;">Get quick strategic information about our production delivery frameworks and structural execution cycles.</p>
+                    <p>Factual breakdowns concerning standard development cycles and configuration parameters.</p>
                 </div>
-                <div class="faq-max-wrap">
-                    <div class="accordion-item glass-card">
-                        <div class="accordion-header" onclick="toggleAccordion(this)">
-                            <span>What is the standard engineering production timeline?</span>
-                            <i class="fas fa-chevron-down accordion-icon"></i>
-                        </div>
-                        <div class="accordion-content">
-                            <p>Standard professional architectures are fully staged, validated, and launched onto high-performance hosts within 7 to 14 business working protocols.</p>
-                        </div>
+                <div class="faq-max-wrap" id="faq-target-node">
                     </div>
-                    <div class="accordion-item glass-card">
-                        <div class="accordion-header" onclick="toggleAccordion(this)">
-                            <span>Are ongoing cloud hosting integrations included?</span>
-                            <i class="fas fa-chevron-down accordion-icon"></i>
-                        </div>
-                        <div class="accordion-content">
-                            <p>Yes, all active corporate packages include baseline configuration monitoring, ongoing security compliance checks, and responsive operations optimization loops.</p>
-                        </div>
-                    </div>
-                </div>
             </section>
 
             <section id="contact" class="reveal">
                 <div class="section-header">
-                    <h2>Initialize Product Architecture</h2>
-                    <p class="hero-text" style="margin: 0 auto 40px auto;">Submit your architectural prerequisites below. Our commercial interface team will process your configuration context immediately.</p>
+                    <h2>Website Inquiry Form</h2>
+                    <p>Initialize project deployment parameter matching with our architecture team instantly.</p>
                 </div>
                 <div class="form-max-wrap glass-card">
-                    <form class="inquiry-form" id="contactForm">
+                    <form class="inquiry-form" id="project-submission-node">
                         <div class="form-element-block">
-                            <label>Full Professional Name</label>
-                            <input type="text" required placeholder="John Doe" id="form-name">
+                            <label for="form-client-name">Your Full Name *</label>
+                            <input type="text" id="form-client-name" required placeholder="John Doe">
                         </div>
                         <div class="form-element-block">
-                            <label>Corporate Communications Email</label>
-                            <input type="email" required placeholder="john@company.com" id="form-email">
+                            <label for="form-client-phone">Phone Number *</label>
+                            <input type="tel" id="form-client-phone" required placeholder="+91 00000 00000">
                         </div>
                         <div class="form-element-block form-full-width">
-                            <label>Target Execution Segment</label>
-                            <select id="form-segment">
-                                <option>Enterprise Web Application Platform</option>
-                                <option>E-Commerce Ecosystem Setup</option>
-                                <option>Custom High-Performance Landing Asset</option>
+                            <label for="form-client-biz">Business Name</label>
+                            <input type="text" id="form-client-biz" placeholder="Enterprise Brand Name">
+                        </div>
+                        <div class="form-element-block form-full-width">
+                            <label for="form-client-srv">Website Type Selection *</label>
+                            <select id="form-client-srv" required>
+                                <option value="" disabled selected>Choose a platform layout package</option>
                             </select>
                         </div>
                         <div class="form-element-block form-full-width">
-                            <label>Architectural Blueprint Context / Requirements</label>
-                            <textarea required placeholder="Outline core project components..." id="form-message"></textarea>
+                            <label for="form-client-budget">Budget Framework Allocation</label>
+                            <input type="text" id="form-client-budget" placeholder="e.g. ₹15,000 INR">
                         </div>
-                        <button type="submit" class="btn-main btn-fill form-full-width" style="justify-content: center;">Deploy Pipeline Order <i class="fas fa-rocket"></i></button>
+                        <div class="form-element-block form-full-width">
+                            <label for="form-client-msg">Project Requirements & Specifications</label>
+                            <textarea id="form-client-msg" placeholder="Describe specific functional priorities..."></textarea>
+                        </div>
+                        <div class="form-full-width">
+                            <button type="submit" class="btn-main btn-fill" style="width:100%; justify-content:center;">Submit Inquiry to WhatsApp <i class="fab fa-whatsapp"></i></button>
+                        </div>
                     </form>
                 </div>
             </section>
@@ -1360,71 +1391,430 @@
             <footer class="main-footer">
                 <div class="footer-grid">
                     <div>
-                        <a href="#" class="footer-logo">AS WEB SOLUTIONS</a>
-                        <p class="footer-desc">Architecting premium, secure, and blazing fast digital interfaces for forward-thinking global brands.</p>
+                        <span class="footer-logo">AS WEB SOLUTIONS</span>
+                        <p class="footer-desc">“We Build Brands, Websites & Futures”</p>
                     </div>
                     <div>
-                        <h4 class="footer-col-title">Navigation Links</h4>
+                        <h4 class="footer-col-title">Navigation Quick Links</h4>
                         <ul class="footer-links-list">
-                            <li><a href="#hero">Return to Top</a></li>
-                            <li><a href="#services">Premium Solutions</a></li>
-                            <li><a href="#features">Strategic Alignment</a></li>
-                            <li><a href="#faq">Core Framework FAQ</a></li>
+                            <li><a href="services.html">Services Portfolio</a></li>
+                            <li><a href="services.html">Platform Demo Matrix</a></li>
+                            <li><a href="contact.html">Contact Gateway</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h4 class="footer-col-title">Connect Globally</h4>
+                        <h4 class="footer-col-title">Ecosystem & Communities</h4>
                         <div class="social-row-flex">
-                            <a href="#" class="social-circle-link"><i class="fab fa-github"></i></a>
-                            <a href="#" class="social-circle-link"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#" class="social-circle-link"><i class="fab fa-twitter"></i></a>
+                            <a href="https://wa.me/918087585398" class="social-circle-link" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://t.me/aswebsolutions" class="social-circle-link" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+                            <a href="#" class="social-circle-link" id="insta-footer-node" target="_blank"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="footer-bottom">
-                    <p>&copy; 2026 AS Web Solutions. All Rights Reserved.</p>
-                    <p>Designed for Ultimate Conversion Scalability.</p>
+                    <p>&copy; 2026 AS Web Solutions. All Rights Reserved globally.</p>
+                    <p>Designed with Glassmorphic System Architecture Node.</p>
                 </div>
             </footer>
         </div>
     </div>
 
-    <script>
-        // Custom Realtime Particle Matrix Infrastructure
-        const targetCanvasElement = document.getElementById("particles-canvas");
-        const contextRenderingRef = targetCanvasElement.getContext("2d");
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAuth, onAuthStateChanged, signOut, updateProfile, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
 
+        const firebaseConfig = {
+            apiKey: "AIzaSyAPlPY3Da0wNXUUXShdFZggt81hKztAiRI",
+            authDomain: "aswebsolutions-4401b.firebaseapp.com",
+            projectId: "aswebsolutions-4401b",
+            storageBucket: "aswebsolutions-4401b.firebasestorage.app",
+            messagingSenderId: "1085988134291",
+            appId: "1:1085988134291:web:3f4f6f3a0a5652d2ce9c66",
+            measurementId: "G-D8TM1S52E6"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const storage = getStorage(app);
+
+        let authResolved = false;
+
+        function clearLoaderScreen() {
+            const loader = document.getElementById("loader-screen");
+            if(loader) {
+                loader.style.opacity = "0";
+                loader.style.visibility = "hidden";
+                setTimeout(() => loader.style.display = "none", 500);
+            }
+        }
+
+        setTimeout(() => {
+            if (!authResolved) {
+                if (auth.currentUser) {
+                    authResolved = true;
+                    bindUserDataFields(auth.currentUser);
+                    clearLoaderScreen();
+                } else {
+                    window.location.href = "index.html";
+                }
+            }
+        }, 8000);
+
+        const selectionArray = [
+            "Business Website Layout",
+            "Premium Corporate Portal",
+            "Ecommerce Automation Platform",
+            "Restaurant Showcase Board",
+            "Hospital / Clinic Onboarding Suite",
+            "Gym & Fitness Landing Module",
+            "Real Estate Property Listing Engine",
+            "Comprehensive SEO Campaign",
+            "Enterprise Security Maintenance Package"
+        ];
+
+        const standardFaqDataset = [
+            { q: "How much does a website cost?", a: "Our entry layouts start directly at ₹4,999, scaling cleanly based on systemic platform feature counts and complexity specifications up to our advanced enterprise ecommerce systems." },
+            { q: "Is domain and hosting included?", a: "Hosting deployment parameters and domain linking operations are completely managed by our operations engineering group during deployment setup routines." },
+            { q: "How long does delivery take?", a: "Standard validation layouts deploy inside 3 to 5 operating windows. High-tier business networks usually require 7 to 12 production cycles to ensure optimal testing passes." },
+            { q: "Will my website be mobile friendly?", a: "Yes, every framework code configuration employs premium semantic styling layout systems ensuring smooth performance across modern smartphones." },
+            { q: "Do you provide WhatsApp integration?", a: "Absolutely. We route continuous tracking lines and instant communication click gates directly to your active organizational contact points." },
+            { q: "Do you create ecommerce websites?", a: "Yes, we construct complex multi-vendor or direct storefront properties featuring checkout security configurations and high throughput processing." },
+            { q: "Do you provide support after delivery?", a: "We provide complete runtime tracking protection and server optimization adjustments based on specified service layer selection agreements." },
+            { q: "Can I choose a demo website?", a: "Yes, our catalog platform details a large array of production-ready component blueprints across various market verticals." }
+        ];
+
+        onAuthStateChanged(auth, (user) => {
+            authResolved = true;
+            if (!user) {
+                window.location.href = "index.html";
+            } else {
+                bindUserDataFields(user);
+                clearLoaderScreen();
+            }
+        }, (error) => {
+            authResolved = true;
+            console.error(error);
+            window.location.href = "index.html";
+        });
+
+        function bindUserDataFields(user) {
+            const fallbackAvatar = "https://ui-avatars.com/api/?name=" + encodeURIComponent(user.displayName || user.email || "Premium Member") + "&background=6366f1&color=fff";
+            const actualPhoto = user.photoURL || fallbackAvatar;
+            const actualName = user.displayName || "Premium Member";
+
+            document.getElementById("nav-user-avatar").src = actualPhoto;
+            document.getElementById("nav-user-name").innerText = actualName;
+            document.getElementById("panel-user-avatar").src = actualPhoto;
+            document.getElementById("panel-display-name").innerText = actualName;
+            document.getElementById("panel-display-email").innerText = user.email;
+            document.getElementById("update-username-input").value = user.displayName || "";
+        }
+
+        function executeLayoutGenerationRoutines() {
+            const srvSelect = document.getElementById("form-client-srv");
+            if(srvSelect) {
+                selectionArray.forEach(srvName => {
+                    const el = document.createElement("option");
+                    el.value = srvName;
+                    el.textContent = srvName;
+                    srvSelect.appendChild(el);
+                });
+            }
+
+            const faqBox = document.getElementById("faq-target-node");
+            if(faqBox) {
+                faqBox.innerHTML = standardFaqDataset.map(item => `
+                    <div class="accordion-item glass-card" onclick="toggleFaqAccordionNode(this)">
+                        <div class="accordion-header">
+                            <span>${item.q}</span>
+                            <i class="fas fa-chevron-down accordion-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>${item.a}</p>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        executeLayoutGenerationRoutines();
+
+        // Update Profile processing loop
+        document.getElementById("save-profile-btn").addEventListener("click", async () => {
+            const user = auth.currentUser;
+            if(!user) return;
+
+            const nameVal = document.getElementById("update-username-input").value.trim();
+            const imgFile = document.getElementById("update-avatar-file").files[0];
+
+            if(!nameVal && !imgFile) {
+                window.triggerToastNotification("Please modify your username or select an image file first.", "error");
+                return;
+            }
+
+            const btn = document.getElementById("save-profile-btn");
+            btn.innerText = "Processing Data Updates...";
+            btn.disabled = true;
+
+            try {
+                let trackingPayload = {};
+                if (nameVal) trackingPayload.displayName = nameVal;
+
+                if (imgFile) {
+                    const storagePathRef = ref(storage, `profilePhotos/${user.uid}/profile.jpg`);
+                    const uploadToken = await uploadBytes(storagePathRef, imgFile);
+                    const remoteUrl = await getDownloadURL(uploadToken.ref);
+                    trackingPayload.photoURL = remoteUrl;
+                }
+
+                await updateProfile(user, trackingPayload);
+                bindUserDataFields(user);
+                window.triggerToastNotification("Account profile attributes synchronized successfully.", "success");
+                document.getElementById("update-avatar-file").value = "";
+            } catch (error) {
+                console.error(error);
+                window.triggerToastNotification("Profile photo upload failed. Check Firebase Storage rules.", "error");
+            } finally {
+                btn.innerText = "Save Profile";
+                btn.disabled = false;
+            }
+        });
+
+        // Password reset mechanism
+        document.getElementById("send-reset-link-btn").addEventListener("click", async () => {
+            const user = auth.currentUser;
+            if(!user || !user.email) return;
+
+            const pBtn = document.getElementById("send-reset-link-btn");
+            pBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Sending Link...`;
+            pBtn.disabled = true;
+
+            try {
+                await sendPasswordResetEmail(auth, user.email);
+                window.triggerToastNotification("Password reset email sent. Please check your inbox or spam folder.", "success");
+            } catch(error) {
+                console.error(error);
+                window.triggerToastNotification("Failed to send verification transmission packet.", "error");
+            } finally {
+                pBtn.innerHTML = `<i class="fas fa-paper-plane" style="margin-right: 6px;"></i> Send Password Reset Link`;
+                pBtn.disabled = false;
+            }
+        });
+
+        // Signout configuration execution
+        document.getElementById("action-logout-btn").addEventListener("click", async () => {
+            try {
+                await signOut(auth);
+                window.location.href = "index.html";
+            } catch(err) {
+                window.triggerToastNotification("Failed to terminate session context safely.", "error");
+            }
+        });
+    </script>
+
+    <script>
+        // Core Fix: Top-Right Stacked Animated Notification Injection Handler System
+        function triggerToastNotification(message, statusType = "success") {
+            const tray = document.getElementById("toast-container");
+            if(!tray) return;
+
+            const element = document.createElement("div");
+            element.className = `toast-notification ${statusType}`;
+            let symbol = statusType === "success" ? "fa-circle-check" : "fa-circle-exclamation";
+            element.innerHTML = `<i class="fas ${symbol}"></i> <span>${message}</span>`;
+            
+            tray.appendChild(element);
+            setTimeout(() => {
+                element.style.animation = "toastTopIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) reverse forwards";
+                setTimeout(() => element.remove(), 400);
+            }, 5000);
+        }
+        window.triggerToastNotification = triggerToastNotification;
+
+        function toggleMenuAccordion(headerElement) {
+            const targetItem = headerElement.parentElement;
+            const menuPanel = document.getElementById("user-profile-panel");
+            const alreadyActive = targetItem.classList.contains("active");
+            
+            menuPanel.querySelectorAll(".menu-accordion-item").forEach(item => {
+                item.classList.remove("active");
+            });
+            
+            if(!alreadyActive) {
+                targetItem.classList.add("active");
+            }
+        }
+
+        function toggleProfilePanel(event) {
+            if(event) event.stopPropagation();
+            const panel = document.getElementById("user-profile-panel");
+            if(panel) {
+                panel.style.display = (panel.style.display === "block") ? "none" : "block";
+            }
+        }
+
+        document.addEventListener("click", (e) => {
+            const panel = document.getElementById("user-profile-panel");
+            const boxTrigger = document.querySelector(".profile-trigger");
+            if (panel && panel.style.display === "block") {
+                if (!panel.contains(e.target) && !boxTrigger.contains(e.target)) {
+                    panel.style.display = "none";
+                }
+            }
+        });
+
+        function toggleMobileMenu() {
+            if(window.innerWidth <= 768) {
+                const links = document.getElementById("menu-links");
+                if(links) links.classList.toggle("mobile-open");
+            }
+        }
+
+        function toggleFaqAccordionNode(element) {
+            const currentIsOpen = element.classList.contains("open");
+            document.querySelectorAll(".accordion-item").forEach(item => item.classList.remove("open"));
+            if(!currentIsOpen) {
+                element.classList.add("open");
+            }
+        }
+
+        // Environmental Filter Modulation
+        const sliderBright = document.getElementById("slider-brightness");
+        const sliderContrast = document.getElementById("slider-contrast");
+        const chkTheme = document.getElementById("theme-toggle-chk");
+        const baseFilterTarget = document.getElementById("global-filter-wrap");
+
+        function synchronizeVisualFilters() {
+            let b = sliderBright.value;
+            let c = sliderContrast.value;
+            document.getElementById("label-bright").innerText = `${b}%`;
+            document.getElementById("label-contrast").innerText = `${c}%`;
+            baseFilterTarget.style.filter = `brightness(${b}%) contrast(${c}%)`;
+            localStorage.setItem("as_brightness", b);
+            localStorage.setItem("as_contrast", c);
+        }
+
+        sliderBright.addEventListener("input", synchronizeVisualFilters);
+        sliderContrast.addEventListener("input", synchronizeVisualFilters);
+
+        chkTheme.addEventListener("change", () => {
+            const layoutMode = chkTheme.checked ? "light" : "dark";
+            document.documentElement.setAttribute("data-theme", layoutMode);
+            localStorage.setItem("as_theme_layout", layoutMode);
+        });
+
+        function pullEnvironmentalCache() {
+            const b = localStorage.getItem("as_brightness") || "100";
+            const c = localStorage.getItem("as_contrast") || "100";
+            const currentTheme = localStorage.getItem("as_theme_layout") || "dark";
+
+            sliderBright.value = b;
+            sliderContrast.value = c;
+            chkTheme.checked = (currentTheme === "light");
+
+            document.documentElement.setAttribute("data-theme", currentTheme);
+            baseFilterTarget.style.filter = `brightness(${b}%) contrast(${c}%)`;
+            document.getElementById("label-bright").innerText = `${b}%`;
+            document.getElementById("label-contrast").innerText = `${c}%`;
+        }
+        pullEnvironmentalCache();
+
+        // Customer Pipeline Submission Processing Gateway Module
+        document.getElementById("project-submission-node").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const clientName = document.getElementById("form-client-name").value.trim();
+            const clientPhone = document.getElementById("form-client-phone").value.trim();
+            const clientBizName = document.getElementById("form-client-biz").value.trim() || "Not Disclosed";
+            const selectedLayout = document.getElementById("form-client-srv").value;
+            const projectBudget = document.getElementById("form-client-budget").value.trim() || "Flexible Framework Allocation";
+            const messageDetails = document.getElementById("form-client-msg").value.trim() || "No additional context payload configured.";
+
+            if (clientPhone.length < 10) {
+                triggerToastNotification("Please enter a valid phone number sequence mapping loop.", "error");
+                return;
+            }
+
+            const formattedPayloadString = 
+                `*NEW PROJECT INQUIRY ROUTE*%0A` +
+                `----------------------------------------%0A` +
+                `• *Client Identity:* ${encodeURIComponent(clientName)}%0A` +
+                `• *Contact Node:* ${encodeURIComponent(clientPhone)}%0A` +
+                `• *Enterprise Unit:* ${encodeURIComponent(clientBizName)}%0A` +
+                `• *Selected Blueprint:* ${encodeURIComponent(selectedLayout)}%0A` +
+                `• *Allocation Target:* ${encodeURIComponent(projectBudget)}%0A` +
+                `• *System Parameters:* ${encodeURIComponent(messageDetails)}%0A` +
+                `----------------------------------------%0A` +
+                `Generated from Active Dashboard Session Interface.`;
+
+            window.open(`https://wa.me/918087585398?text=${formattedPayloadString}`, '_blank');
+            triggerToastNotification("Project initialization data dispatched to communication channels.", "success");
+        });
+
+        function handleScrollRevealCalculation() {
+            const elements = document.querySelectorAll(".reveal");
+            const visualThresholdHeight = window.innerHeight * 0.85;
+            elements.forEach(el => {
+                const distanceToTop = el.getBoundingClientRect().top;
+                if (distanceToTop < visualThresholdHeight) {
+                    el.classList.add("active");
+                }
+            });
+        }
+        window.addEventListener("scroll", handleScrollRevealCalculation);
+        setTimeout(handleScrollRevealCalculation, 600);
+
+        const highlightBlobElement = document.getElementById("mouse-glow");
+        document.addEventListener("mousemove", (event) => {
+            if(highlightBlobElement) {
+                highlightBlobElement.style.left = `${event.clientX}px`;
+                highlightBlobElement.style.top = `${event.clientY}px`;
+            }
+        });
+
+        // Advanced Multi-Layer Interconnected Constellation Net Particle System Layout
+        const renderingCanvasElement = document.getElementById("particles-canvas");
+        const contextRenderingRef = renderingCanvasElement.getContext("2d");
         let activeNodesArray = [];
-        const operationalDensityFactor = 85;
+
+        function recalculateCanvasBoundaries() {
+            renderingCanvasElement.width = window.innerWidth;
+            renderingCanvasElement.height = window.innerHeight;
+        }
+        window.addEventListener("resize", recalculateCanvasBoundaries);
+        recalculateCanvasBoundaries();
+
+        class NetworkNodeInstance {
+            constructor() {
+                this.xPos = Math.random() * renderingCanvasElement.width;
+                this.yPos = Math.random() * renderingCanvasElement.height;
+                this.xSpeedVal = (Math.random() - 0.5) * 0.6;
+                this.ySpeedVal = (Math.random() - 0.5) * 0.6;
+                this.nodeRadius = Math.random() * 1.5 + 1;
+            }
+            computeVectorUpdates() {
+                this.xPos += this.xSpeedVal;
+                this.yPos += this.ySpeedVal;
+                if (this.xPos < 0 || this.xPos > renderingCanvasElement.width) this.xSpeedVal *= -1;
+                if (this.yPos < 0 || this.yPos > renderingCanvasElement.height) this.ySpeedVal *= -1;
+            }
+        }
 
         function buildNetworkMatrixPool() {
-            targetCanvasElement.width = window.innerWidth;
-            targetCanvasElement.height = window.innerHeight;
             activeNodesArray = [];
-            
-            for(let i = 0; i < operationalDensityFactor; i++) {
-                activeNodesArray.push({
-                    xPos: Math.random() * targetCanvasElement.width,
-                    yPos: Math.random() * targetCanvasElement.height,
-                    deltaX: (Math.random() - 0.5) * 0.45,
-                    deltaY: (Math.random() - 0.5) * 0.45,
-                    radius: Math.random() * 2 + 1
-                });
+            const nodesCount = Math.min(Math.floor(window.innerWidth / 15), 80);
+            for (let i = 0; i < nodesCount; i++) {
+                activeNodesArray.push(new NetworkNodeInstance());
             }
         }
 
         function frameExecutionEngineCycle() {
-            contextRenderingRef.clearRect(0, 0, targetCanvasElement.width, targetCanvasElement.height);
+            contextRenderingRef.clearRect(0, 0, renderingCanvasElement.width, renderingCanvasElement.height);
             
             activeNodesArray.forEach(node => {
-                node.xPos += node.deltaX;
-                node.yPos += node.deltaY;
-
-                if (node.xPos < 0 || node.xPos > targetCanvasElement.width) node.deltaX *= -1;
-                if (node.yPos < 0 || node.yPos > targetCanvasElement.height) node.deltaY *= -1;
-
+                node.computeVectorUpdates();
                 contextRenderingRef.beginPath();
-                contextRenderingRef.arc(node.xPos, node.yPos, node.radius, 0, Math.PI * 2);
+                contextRenderingRef.arc(node.xPos, node.yPos, node.nodeRadius, 0, Math.PI * 2);
                 contextRenderingRef.fillStyle = "rgba(168, 85, 247, 0.3)";
                 contextRenderingRef.fill();
             });
@@ -1451,127 +1841,8 @@
         buildNetworkMatrixPool();
         frameExecutionEngineCycle();
 
-        window.addEventListener("resize", buildNetworkMatrixPool);
         window.addEventListener("error", err => console.error(err.message));
-
-        // Interactive Cursor Tracking Grid Logic
-        const trackingCursorElement = document.getElementById("mouse-glow");
-        window.addEventListener("mousemove", (event) => {
-            trackingCursorElement.style.left = `${event.clientX}px`;
-            trackingCursorElement.style.top = `${event.clientY}px`;
-        });
-
-        // App Loader Core Dismissal Flow
-        window.addEventListener("load", () => {
-            const screenLoaderElement = document.getElementById("loader-screen");
-            setTimeout(() => {
-                screenLoaderElement.style.opacity = "0";
-                screenLoaderElement.style.visibility = "hidden";
-                executeScrollRevealTrigger();
-            }, 600);
-        });
-
-        // Core Layout Animations On View Tracker
-        function executeScrollRevealTrigger() {
-            const registeredRevealNodes = document.querySelectorAll(".reveal");
-            const structuralOffsetThreshold = 140;
-
-            function processRevealEvaluation() {
-                registeredRevealNodes.forEach(node => {
-                    const computationalTopDist = node.getBoundingClientRect().top;
-                    if (computationalTopDist < window.innerHeight - structuralOffsetThreshold) {
-                        node.classList.add("active");
-                    }
-                });
-            }
-
-            window.addEventListener("scroll", processRevealEvaluation);
-            processRevealEvaluation();
-        }
-
-        // Toggle UI Menu Actions
-        function toggleMobileMenu() {
-            document.getElementById("menu-links").classList.toggle("mobile-open");
-        }
-
-        function toggleProfilePanel(event) {
-            event.stopPropagation();
-            const interfaceTargetPanel = document.getElementById("user-profile-panel");
-            interfaceTargetPanel.style.display = (interfaceTargetPanel.style.display === "block") ? "none" : "block";
-        }
-
-        document.addEventListener("click", () => {
-            document.getElementById("user-profile-panel").style.display = "none";
-        });
-
-        document.getElementById("user-profile-panel").addEventListener("click", e => e.stopPropagation());
-
-        function toggleMenuAccordion(headerElement) {
-            const targetParentItem = headerElement.parentElement;
-            targetParentItem.classList.toggle("active");
-        }
-
-        function toggleAccordion(headerElement) {
-            headerElement.parentElement.classList.toggle("open");
-        }
-
-        // Notification Engine Integration Layer
-        function renderSystemNotification(displayMessageText, notificationTypeClassification = "success") {
-            const structuralParentStream = document.getElementById("toast-container");
-            const interactiveNotificationCard = document.createElement("div");
-            
-            interactiveNotificationCard.className = `toast-notification glass-card ${notificationTypeClassification}`;
-            
-            const internalStatusIconCode = notificationTypeClassification === "success" ? "fa-circle-check" : "fa-circle-exclamation";
-            const structuralColorValue = notificationTypeClassification === "success" ? "#10b981" : "#ef4444";
-            
-            interactiveNotificationCard.innerHTML = `
-                <i class="fas ${internalStatusIconCode}" style="color: ${structuralColorValue}; font-size: 1.1rem;"></i>
-                <span>${displayMessageText}</span>
-            `;
-            
-            structuralParentStream.appendChild(interactiveNotificationCard);
-            
-            setTimeout(() => {
-                interactiveNotificationCard.style.opacity = "0";
-                interactiveNotificationCard.style.transform = "translateY(-10px) scale(0.9)";
-                interactiveNotificationCard.style.transition = "0.3s easeAll";
-                setTimeout(() => interactiveNotificationCard.remove(), 300);
-            }, 3500);
-        }
-
-        // Interface State Adjustments Filter Handlers
-        const globalLayoutWrapper = document.getElementById("global-filter-wrap");
-        const interfaceBrightnessRange = document.getElementById("slider-brightness");
-        const interfaceContrastRange = document.getElementById("slider-contrast");
-        const appThemeToggleCheckbox = document.getElementById("theme-toggle-chk");
-
-        function recalculateGraphicFilterMatrix() {
-            globalLayoutWrapper.style.filter = `brightness(${interfaceBrightnessRange.value}%) contrast(${interfaceContrastRange.value}%)`;
-        }
-
-        interfaceBrightnessRange.addEventListener("input", () => {
-            document.getElementById("label-bright").innerText = `${interfaceBrightnessRange.value}%`;
-            recalculateGraphicFilterMatrix();
-        });
-
-        interfaceContrastRange.addEventListener("input", () => {
-            document.getElementById("label-contrast").innerText = `${interfaceContrastRange.value}%`;
-            recalculateGraphicFilterMatrix();
-        });
-
-        appThemeToggleCheckbox.addEventListener("change", () => {
-            const computedThemeMode = appThemeToggleCheckbox.checked ? "light" : "dark";
-            document.documentElement.setAttribute("data-theme", computedThemeMode);
-            renderSystemNotification(`Switched to operational ${computedThemeMode} layout system configuration environment.`);
-        });
-
-        // Contact Form Processing
-        document.getElementById("contactForm").addEventListener("submit", (e) => {
-            e.preventDefault();
-            renderSystemNotification("Pipeline request deployed successfully! Our servers are processing the order.");
-            e.target.reset();
-        });
+        window.addEventListener("unhandledrejection", rejection => console.error(rejection.reason));
     </script>
 </body>
 </html>
